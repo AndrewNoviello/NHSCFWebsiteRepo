@@ -51,7 +51,7 @@ router.post("/signup", function(req,res, next){
             req.flash("error", "Account With This Email Already Exists");
             return res.redirect("./signup");
         }
-        console.log("Created New User");
+        //console.log("Created New User");
         var newUser = new User({
             fname:fname,
             lname:lname,
@@ -62,7 +62,7 @@ router.post("/signup", function(req,res, next){
             schoolName:school
         });
         newUser.save(next);
-        console.log("About to Check Passport");
+        //console.log("About to Check Passport");
     });
 }, passport.authenticate("login", {
     successRedirect:"/",

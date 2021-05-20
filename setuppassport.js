@@ -15,13 +15,14 @@ module.exports= function(){
     });
 
     passport.use("login", new LocalStrategy({
-        usernameField:'prefEmail',
+        usernameField:'email',
         passwordField:'password'
     }, function(email, password, done){
         console.log("In Passport Authenticate");
         User.findOne({prefEmail:email}, function(err, user){
             if(err){return done(err);}
             if(!user){
+                console.log("No User Has That Email")
                 return done(null, false, {message: "No User Has That Email"});
             }
             user.checkPassword(password, function(err, isMatch){
@@ -29,6 +30,7 @@ module.exports= function(){
                 if(isMatch){
                     return done(null, user);
                 } else{
+                    console.log("Wrong Password");
                     return done(null, false, {message: "Invalid Password"});
                 }
             });
