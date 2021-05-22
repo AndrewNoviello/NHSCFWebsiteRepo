@@ -1,0 +1,22 @@
+<%- include ("../_partials/_header.ejs"); %>
+
+<hr>
+	<div>
+        <h1><%=info.eventName%></h1>
+        <p><%=info.eventDesc%></p>
+		<form action="/eventRegister" method="POST" enctype="multipart/form-data">
+            <% items.forEach(function(field) { %>
+			<div>
+				<label for="name"><%=field%></label>
+				<input type="text" id="<%=field%>" placeholder="<%=field%>"
+					value="" name="<%=field.replace(/ /g, '')%>" required>
+			</div>
+            <% }) %>
+			<div>
+				<button type="submit">Register for the Event</button>
+			</div>
+		</form>
+	</div>
+
+
+<%- include ("../_partials/_footer.ejs"); %>

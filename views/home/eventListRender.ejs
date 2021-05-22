@@ -1,0 +1,26 @@
+<%- include ("../_partials/_header.ejs"); %>
+
+<h1>Uploaded Events</h1>
+	<div>
+		<% items.forEach(function(event) { %>
+		<div>
+			<div>
+				<img src="data:event/<%=event.img.contentType%>;base64,
+					<%=event.img.data.toString('base64')%>" height="300px" width="100px">
+				<div>
+					<h5><%= event.eventName %></h5>
+					<h4><%= event.eventDate %></h4>
+                    <h3><%= event.numEventFields %></h3>
+                    <h3><%= event.eventFields %></h3>
+                    <h3><%= event.isPublic %></h3>
+                    <p><%= event.eventDesc %></p>
+
+
+				</div>
+			</div>
+		</div>
+		<% }) %>
+	</div>
+
+
+<%- include ("../_partials/_footer.ejs"); %>

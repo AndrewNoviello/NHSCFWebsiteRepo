@@ -8,6 +8,8 @@ var flash = require("connect-flash");
 var params = require("./params/params");
 var bodyParser = require("body-parser");
 var setUpPassport = require("./setuppassport");
+var fs = require('fs');
+
 //var routes = require("./routes");
 
 var app = express();
