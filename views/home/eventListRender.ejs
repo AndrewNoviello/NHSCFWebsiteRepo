@@ -1,23 +1,50 @@
 <%- include ("../_partials/_header.ejs"); %>
+<div class="topPic">
+    <div class="navbar" role="navigation">
+     <div class="container">
+        <div class="navbar-header">
+        <p class="navText" href="/">The National High School Climate Forum</p>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+        <li class="navText"><a class="navText" href="/home">Home</a></li>
+        <li class="navText"><a class="navText" href="/about">About</a></li>
+        <% if(currentUser != null){%>
+            <li><a class="navText" href="#">Welcome <%= currentUser.fname %> from <%= currentUser.schoolName%>!</a></li>
+            <li><a  class="navText"href="/logout">Logout</a></li>
+        <%}%>
 
-<h1>Uploaded Events</h1>
+        <% if(currentUser == null){%>
+            <li><a class="navText" href="/login">Log In</a></li>
+            <li><a class="navText" href="/signup">Sign Up</a></li>
+        <%}%>
+        </ul>
+    </div>
+</div>
+<div class="welcomeText">National High School Climate Forum Events</div>
+
+</div>
+ 
+<div class="container">
+<div>
+    <p style="font-size: 16px; text-align: left; font: italic; color: black; padding-bottom: 25px; padding-top: 15px"><i><b>
+    Please scan the events below to see what the National High School Climate Forum is up to. We hope to 
+    see you at our next event!</b></i></p>
+</div>
 	<div>
 		<% items.forEach(function(event) { %>
 		<div>
-			<div>
-				<img src="data:event/<%=event.img.contentType%>;base64,
-					<%=event.img.data.toString('base64')%>" height="300px" width="100px">
+			<div class="eventRow">
+				<img class="eventPic"
+                    src="data:event/<%=event.img.contentType%>;base64,
+					<%=event.img.data.toString('base64')%>">
 				<div>
-					<h5><%= event.eventName %></h5>
-					<h4><%= event.eventDate %></h4>
-                    <h3><%= event.numEventFields %></h3>
-                    <h3><%= event.eventFields %></h3>
-                    <h3><%= event.isPublic %></h3>
-                    <p><%= event.eventDesc %></p>
-
-
+					<p class="eventName"><b><%= event.eventName %></b></p>
+                    <p class="eventDescription"><%= event.eventDesc %></p>
+                    <p class="eventDate"><b>Event Date: <%= event.eventDate %></b></p>
+                    <button class="eventRegisterButton">Register</button>
 				</div>
 			</div>
+            
 		</div>
 		<% }) %>
 	</div>

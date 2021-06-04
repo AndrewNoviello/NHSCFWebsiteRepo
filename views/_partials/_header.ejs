@@ -5,32 +5,11 @@
     <meta charset="utf-8">
     <title>Node Tutorial</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
- 
-<body>
-<div class="navbar navbar-default navbar-static-top" role="navigation">
-     <div class="container">
-        <div class="navbar-header">
-        <a class="navbar-brand" href="/">Node Tutorial</a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-        <li><a href="/home">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <% if(currentUser != null){%>
-            <li><a href="#">Welcome <%= currentUser.fname %> from <%= currentUser.schoolName%>!</a></li>
-            <li><a href="/logout">Logout</a></li>
-        <%}%>
 
-        <% if(currentUser == null){%>
-            <li><a href="/login">Log In</a></li>
-            <li><a href="/signup">Sign Up</a></li>
-        <%}%>
-        </ul>
-    </div>
-</div>
- 
-<div class="container">
-    
+<body>
+

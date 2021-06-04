@@ -1,5 +1,102 @@
 <%- include ("../_partials/_header.ejs"); %>
+<div class="topPic">
+    <div class="navbar" role="navigation">
+     <div class="container">
+        <div class="navbar-header">
+        <p class="navText" href="/">The National High School Climate Forum</p>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+        <li class="navText"><a class="navText" href="/home">Home</a></li>
+        <li class="navText"><a class="navText" href="/about">About</a></li>
+        <% if(currentUser != null){%>
+            <li><a class="navText" href="#">Welcome <%= currentUser.fname %> from <%= currentUser.schoolName%>!</a></li>
+            <li><a class="navText" href="/logout">Logout</a></li>
+        <%}%>
 
-<h1>Index Page</h1>
+        <% if(currentUser == null){%>
+            <li><a class="navText" href="/login">Log In</a></li>
+            <li><a class="navText" href="/signup">Sign Up</a></li>
+        <%}%>
+        </ul>
+    </div>
+</div>
+<div class="welcomeText">Welcome to the National High School Climate Forum</div>
+<div class="welcomeText2">
+    <p style="font-size: 16px"><i>Quote</i></p>
+</div>
+
+</div>
+ 
+<div class="container">
+<h1 style="text-align: center; font-family: Trebuchet MS;">Who We Are</h1>
+<div class="missionStatement">
+    <p><i>"The mission of the National High School Climate Forum is to promote an exchange of ideas between studne environmental
+        leaders at high schools across the country."
+    </i></p>
+</div>
+<div class="homeDescription">
+    <p>Today, the National High SChool Climate Forum has representation from 40 schools in 25+ states.
+    </p>
+</div>
+<div>
+<div class="aboutPageBigPic">
+    <img class="aboutPageBigPic" src="/public/topPic1.jpg">
+</div>
+
+<div class="aboutToggle">
+
+<div class="tabulation-2 mt-4">
+    <ul class="nav nav-tabs">
+        <li class="nav-item mb-md-0 mb-2">
+            <button class="aboutToggleButtons" data-toggle="tab" href="#home1">Forum Platform</button>
+        </li>
+        <li class="nav-item px-lg-2 mb-md-0 mb-2">
+            <button class="aboutToggleButtons" data-toggle="tab" href="#home2">Speaker Events</button>
+        </li>
+        <li class="nav-item">
+            <button class="aboutToggleButtons" data-toggle="tab" href="#home3">National Summit</button>
+        </li>
+    </ul>
+    <div class="tab-content">
+
+        <div class="tab-pane container active">
+            <p>Check out how we make a difference!</p>
+        </div>
+
+        <div class="tab-pane container fade" id="home1">
+            <p>
+                Throughout the year, we aim to provide our member schools with an active forum platform, through which they may gain ideas from the climate initiatives of other schools. Similarly,
+                we provide schools the opportunity to showcase their own ideas on the forum. In order to facilitate this, we will be sending out monthly newsletters, as well as other announcements and reminders.
+            </p>
+        </div>
+        <div class="tab-pane container fade" id="home2">
+            <p>In addition to our providing of our forum platform, we will be coordinating several speaker events throughout the year, leading up to our National Summit.
+            These events will have a theme related to climate change and will feature short presentations by our guest speakers, in addition to Question and Answer Sessions for attendees.</p>
+        </div>
+        <div class="tab-pane container p-0 fade" id="home3">
+            <p>Our final and main event for the year will be the National Summit, which will take place around Earth Day each year. This event will feature guest speakers on broader topics than our individual speaker events,
+            in addition to DIY project demonstrations and the opportunity for member schools to present their initiatives to the larger group. The National Summit will be a virtual event, as will all speaker events.</p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="homePageGetInvolved">
+    <h1 style="display: inline-block; font-family: Trebuchet MS; font-size: 48px; color: black; padding-top: 40px">
+    <b>How do I get involved?</b></h1>
+    <div style="display: inline-block; margin-top: 40px;">
+    <button class="homePageRegisterButtons" >
+        Register Your School
+    </button>
+    <button class="homePageRegisterButtons">
+        Already Registered? Become a Committee Member
+    </button>
+    </div>
+</div>
+
+
+
+
+
 
 <%- include ("../_partials/_footer.ejs"); %>

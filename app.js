@@ -21,6 +21,8 @@ app.set("port", process.env.PORT || 3000);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.use('/public', express.static('public'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
@@ -37,6 +39,8 @@ app.use(flash());
 
 app.use("/", require("./routes/web"));
 app.use("/api", require("./routes/api"));
+
+app.use("/css", express.static(__dirname + './views/css'));
 
 app.listen(app.get("port"), function(){
     console.log("Server started at port " + app.get("port"));

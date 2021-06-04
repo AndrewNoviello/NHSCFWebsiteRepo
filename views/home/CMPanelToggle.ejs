@@ -1,21 +1,50 @@
 <%- include ("../_partials/_header.ejs"); %>
+<div class="topPic">
+    <div class="navbar" role="navigation">
+     <div class="container">
+        <div class="navbar-header">
+        <p class="navText" href="/">The National High School Climate Forum</p>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+        <li class="navText"><a class="navText" href="/home">Home</a></li>
+        <li class="navText"><a class="navText" href="/about">About</a></li>
+        <% if(currentUser != null){%>
+            <li><a class="navText" href="#">Welcome <%= currentUser.fname %> from <%= currentUser.schoolName%>!</a></li>
+            <li><a class="navText" href="/logout">Logout</a></li>
+        <%}%>
 
-<h1>Committee Member Toggle Practice</h1>
+        <% if(currentUser == null){%>
+            <li><a class="navText" href="/login">Log In</a></li>
+            <li><a class="navText" href="/signup">Sign Up</a></li>
+        <%}%>
+        </ul>
+    </div>
+</div>
+<div class="welcomeText">National High School Climate Forum Committee Member Dashboard</div>
+
+</div>
+ 
+<div class="container">
+
 	<div class="container">
+		<p style="font-size: 16px; text-align: left; font: italic; color: black">
+			<b><i>Use the panel below to navigate between subcommittee information and the announcements blog. 
+			Please check the announcements panel and your subcommittee panel regularly. Thanks!</i></b></p>
 		<ul class="nav nav-tabs">
-			<li class="active">
-				<a data-toggle="tab"
+			<li class="CMToggleButtons" style="border-color: black; border-radius: 25px">
+				<a class="CMToggleButtons" data-toggle="tab"
 				href="#chat">Chat</a>
 			</li>
-			<li>
-				<a data-toggle="tab"
+			<li class="CMToggleButtons">
+				<a class="CMToggleButtons" data-toggle="tab"
 				href="#writing">Writing</a>
 			</li>
-			<li>
-				<a data-toggle="tab"
+			<li class="CMToggleButtons">
+				<a class="CMToggleButtons" data-toggle="tab"
 				href="#recruitment">Recruitment</a>
 			</li>
-			<li><a data-toggle="tab"
+			<li class="CMToggleButtons">
+				<a class="CMToggleButtons" data-toggle="tab"
 				href="#planning">Planning</a>
 			</li>
 		</ul>
@@ -46,9 +75,9 @@
 				</p>
 
 			</div>
-			<div id="contact" class="tab-pane fade">
+			<div id="planning" class="tab-pane fade">
 				<h3>Planning</h3>
-				
+
 				<p>
 					This is the planning page.
 				</p>

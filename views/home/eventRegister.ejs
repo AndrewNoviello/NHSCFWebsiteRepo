@@ -1,22 +1,25 @@
 <%- include ("../_partials/_header.ejs"); %>
 
-<hr>
-	<div>
-        <h1><%=info.eventName%></h1>
-        <p><%=info.eventDesc%></p>
-		<form action="/eventRegister" method="POST" enctype="multipart/form-data">
-            <% items.forEach(function(field) { %>
+<div class="fullPagePic">
+	<div style="text-align: center">
+        
+		<form action="/eventRegister" method="POST" enctype="multipart/form-data" class="registerFormContainer">
+            <h1 style="color: darkgreen; text-align: center"><b><i><%=info.eventName%></i></b></h1>
+        	<p style="text-indent: 25px"><%=info.eventDesc%></p>
+			<% items.forEach(function(field) { %>
 			<div>
-				<label for="name"><%=field%></label>
-				<input type="text" id="<%=field%>" placeholder="<%=field%>"
+				
+				<label for="name" style="padding-bottom: 15px;"><%=field%></label>
+				<input style="float: right;" type="text" id="<%=field%>" placeholder="<%=field%>"
 					value="" name="<%=field.replace(/ /g, '')%>" required>
+				
 			</div>
             <% }) %>
 			<div>
-				<button type="submit">Register for the Event</button>
+				<button class="eventFinRegisterButton" type="submit"><i><b>Register for the Event</b></i></button>
 			</div>
 		</form>
 	</div>
-
+</div>
 
 <%- include ("../_partials/_footer.ejs"); %>
