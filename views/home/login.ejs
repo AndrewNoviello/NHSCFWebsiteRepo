@@ -1,29 +1,131 @@
-<%- include ("../_partials/_header.ejs"); %>
-
-<div class="col-md-8">
-    <div class="panel panel-default">
- 
-        <div class="panel-heading">
-            <h3>Log In</h3>
-        </div>
-        <div class="panel-body">
-            <form class="form-signin" method="POST" action="/login">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Email" name="email" aria-describedby="basic-addon1">
-                </div>
-                <br />
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock"
-                            aria-hidden="true"></span></span>
-                    <input type="password" class="form-control" placeholder="Password" name="password" aria-describedby="basic-addon1">
-                </div>
- 
-                <input type="submit" class="btn btn-default navbar-btn" value="Sign In" />
- 
-            </form>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+<title>Bootstrap Simple Login Form with Blue Background</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+<link rel="stylesheet" href="/public/css/style.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+body {
+	color: #fff;
+	background: darkgreen;
+    background-image: url('public/topPic1.jpg');
+}
+.form-control {
+	height: 41px;
+	background: #f2f2f2;
+	box-shadow: none !important;
+	border: none;
+}
+.form-control:focus {
+	background: #e2e2e2;
+}
+.form-control, .btn {        
+	border-radius: 3px;
+}
+.signup-form {
+	width: 400px;
+	margin: 30px auto;
+}
+.signup-form form {
+	color: #999;
+	border-radius: 3px;
+	margin-bottom: 15px;
+	background: #fff;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+}
+.signup-form h2  {
+	color: #333;
+	font-weight: bold;
+	margin-top: 0;
+}
+.signup-form hr  {
+	margin: 0 -30px 20px;
+}    
+.signup-form .form-group {
+	margin-bottom: 20px;
+}
+.signup-form input[type="checkbox"] {
+	margin-top: 3px;
+}
+.signup-form .row div:first-child {
+	padding-right: 10px;
+}
+.signup-form .row div:last-child {
+	padding-left: 10px;
+}
+.signup-form .btn {        
+	font-size: 16px;
+	font-weight: bold;
+	background: darkgreen;
+	border: none;
+	min-width: 140px;
+}
+.signup-form .btn:hover, .signup-form .btn:focus {
+	background: #2389cd !important;
+	outline: none;
+}
+.signup-form a {
+	color: #fff;
+	text-decoration: underline;
+}
+.signup-form a:hover {
+	text-decoration: none;
+}
+.signup-form form a {
+	color: darkgreen;
+	text-decoration: none;
+}	
+.signup-form form a:hover {
+	text-decoration: underline;
+}
+.signup-form .hint-text  {
+	padding-bottom: 15px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+    <div class="navbar" role="navigation" >
+        <div class="container">
+           <div class="navbar-header">
+           <p class="navText" style="position: absolute; left: 10px; top: 20px" href="/">The National High School Climate Forum</p>
+           </div>
+           <ul class="nav navbar-nav navbar-right" style="position: absolute; right: 20px; top: 20px">
+           <li class="navText"><a class="navText" href="/home">Home</a></li>
+           
+           </ul>
+       </div>
 </div>
+
+<div class="signup-form">
+    <form action="/login" method="post">
+		<h2>Sign In</h2>
+        <p>Once you sign in, you will be able to view your committee member dashboard.</p>
+        <hr>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Email" name="email" aria-describedby="basic-addon1">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" name="password" aria-describedby="basic-addon1">
+        </div>        
+		<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
 
 <%- include ("../_partials/_footer.ejs"); %>

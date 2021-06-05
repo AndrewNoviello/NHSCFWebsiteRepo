@@ -5,6 +5,8 @@ var router = express.Router();
 //TODO: Add in Error and Info
 router.use(function(req,res,next){
     res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.info = req.flash("info");
     next();
 });
 router.use("/", require("./home"));

@@ -1,0 +1,336 @@
+.navText{
+  color: white;
+  font-size: 24px;
+  font: bold;
+}
+
+.welcomeText{
+  color: white;
+  font: bold;
+  font-size: 80px;
+  font-weight: 5px;
+  font-family: 'Trebuchet MS';
+  text-align: center;
+  vertical-align: middle;
+  padding: 50px;
+}
+
+.welcomeText2{
+  color: white;
+  font: bold;
+  font-weight: 5px;
+  font-family: 'Trebuchet MS';
+  text-align: center;
+  vertical-align: middle;
+}
+
+.missionStatement{
+  background-color: #fdfdfd;
+  border-radius: 25px;
+  text-align: center;
+  color: black;
+  font-size: 16px;
+  font-family: 'Trebuchet MS';
+}
+
+.aboutToggle{
+  float: right;
+  width: 50%;
+  padding: 16px;
+  border-color: black;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  min-height: 400px;
+  
+}
+
+.aboutToggleButtons{
+  background-color: white;
+  color: black;
+  border-color: white;
+  border-width: 5px;
+  border-radius: 5px;
+  margin: 10px;
+  width: 150px;
+  height: 50px;
+  font-family: 'Trebuchet MS';
+  font-style: bold;
+  font-size: 16px;
+  border-style: solid;
+}
+
+.homePageGetInvolved{
+  margin-top: 40px;
+  padding-top: 40px;
+  text-align: center;
+
+}
+
+.homePageRegisterButtons{
+  color: white;
+  background-color: green;
+  border-color: green;
+  border-style: solid;
+  border-radius: 5px;
+  width: 400px;
+  height: 100px;
+  font-family: 'Trebuchet MS';
+  font-size: 24px;
+  font: bold;
+
+}
+
+.aboutToggleButtons:focus{
+  background-color: black;
+  color: white;
+  border-color: black;
+  border-style: solid;
+  width: 180px;
+  height: 60px;
+  font-size: 20px;
+}
+
+.aboutPageBigPic{
+  float: left;
+  width: 600px;
+  min-height: 400px;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none; }
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem; }
+  .nav-link:hover, .nav-link:focus {
+    text-decoration: none; }
+  .nav-link.disabled {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: default; }
+
+.nav-justified .nav-item {
+ -ms-flex-preferred-size: 0;
+ flex-basis: 0;
+ -webkit-box-flex: 1;
+ -ms-flex-positive: 1;
+ flex-grow: 1;
+ text-align: center; }
+
+.nav-tabs {
+  border-bottom: 1px solid #dee2e6; }
+  .nav-tabs .nav-item {
+    margin-bottom: -1px; }
+  .nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem; }
+    .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+      border-color: #e9ecef #e9ecef #dee2e6; }
+    .nav-tabs .nav-link.disabled {
+      color: #6c757d;
+      background-color: transparent;
+      border-color: transparent; }
+  .nav-tabs .nav-link.active,
+  .nav-tabs .nav-item.show .nav-link {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff; }
+  .nav-tabs .dropdown-menu {
+    margin-top: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+
+
+.nav-fill .nav-item {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: center; }
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #007bff; }
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem; }
+  .nav-link:hover, .nav-link:focus {
+    text-decoration: none; }
+   .nav-link.disabled {
+     color: #6c757d;
+     pointer-events: none;
+     cursor: default; }
+
+.leftBoxForIndex{
+  float: left;
+  width: 49%;
+  height: 300px;
+  border-color: black;
+  border-radius: 25px;
+  padding: 16px;
+  margin-top: 10px;
+}
+
+.rightBoxForIndex{
+  float: right;
+  width: 49%;
+  height: 300px;
+  border-color: black;
+  border-radius: 25px;
+  padding: 16px;
+  margin-top: 10px;
+}
+
+.eventFinRegisterButton{
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  font: bold;
+  font-size: 16px;
+  font-family: 'Trebuchet MS';
+  padding: 10px;
+  border-color: black;
+  box-shadow: green;
+}
+
+.homeDescription{
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  font-family: 'Trebuchet MS';
+}
+
+.picPos {
+ float:left; 
+ height:40px;
+ width:40px; 
+} 
+
+.container {
+  width:100%;
+  height:auto;
+  padding:1%;
+}
+
+.topPic{
+  width: 100%;
+  height: 600px;
+  background-image: url("/public/topPic1.jpg");
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+}
+
+.fullPagePic{
+  background-image: url("/public/topPic1.jpg");
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+  box-sizing: border-box;
+  min-height: 1000px;
+}
+
+.registerFormContainer{
+  border-radius: 25px;
+  text-align: left;
+  vertical-align: middle;
+  margin: 100px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 500px;
+}
+
+.eventRow{
+  float: left; 
+  text-align: justify; 
+  width:100%; 
+  height:auto;
+  background-color: #fcfcfc;
+  border-radius: 50px;
+}
+
+.eventPic{
+  float: left; 
+  height:300px;
+  width:300px;
+  padding-right: 15px;
+}
+
+.eventName{
+  color: green;
+  font-size: 40px;
+  padding-bottom: 15px;
+  font-style: italic;
+}
+
+.eventDescription{
+  font-size: 16px;
+  padding-bottom: 15px;
+  color: gray;
+}
+
+.eventDate{
+  font-size: 24px;
+  color: green;
+  float: left;
+}
+
+.eventRegisterButton{
+  position: absolute;
+  right: 100px;
+  font-size: 24px;
+  text-align: center;
+  background-color: green;
+  color: white;
+  border-color: green;
+  border-radius: 10px;
+  box-shadow: green;
+  
+}
+/*CM Panel Toggle Stuff*/
+
+.CMToggleButtons{
+  text-align: center;
+  color: green;
+  background-color: white;
+  border-radius: 5px;
+  border-color: black;
+  border-width: 1px;
+  font-size: 32px;
+  padding: 25px;
+}
+
+
+.tabulation-2 .nav-pills .nav-item .nav-link {
+  background: #fff;
+  border-radius: 4px;
+  color: #000000;
+  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+  .tabulation-2 .nav-tabs .nav-item .nav-link span {
+    color: #000; }
+  .tabulation-2 .nav-tabs .nav-item .nav-link.active {
+    color: #fff;
+    background: #000;
+    border: 3px solid #000; }
+    .tabulation-2 .nav-tabs .nav-item .nav-link.active span {
+      color: #fff; }
+
+.tabulation-2 .tab-content {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05); }

@@ -1,0 +1,26 @@
+<%- include ("../_partials/_header.ejs"); %>
+
+<div class="fullPagePic">
+	<div style="text-align: center">
+        
+		<form action="/eventRegister" method="POST" enctype="multipart/form-data" class="registerFormContainer">
+            <h1 style="color: darkgreen; text-align: center"><b><i><%=info.eventName%></i></b></h1>
+        	<p style="text-indent: 25px"><%=info.eventDesc%></p>
+			<% items.forEach(function(field) { %>
+			<div>
+				
+				<label for="name" style="padding-bottom: 15px;"><%=field%></label>
+				<input style="float: right;" type="text" id="<%=field%>" placeholder="<%=field%>"
+					value="" name="<%=field.replace(/ /g, '')%>" required>
+				
+			</div>
+            <% }) %>
+			<div>
+				<button class="eventFinRegisterButton" type="submit"><i><b>Register for the Event</b></i></button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+<%- include ("../_partials/_footer.ejs"); %>

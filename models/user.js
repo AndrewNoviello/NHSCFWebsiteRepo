@@ -11,6 +11,7 @@ var userSchema = mongoose.Schema({
     prefPhoneNum:{type:String, required:false, unique:true},
     password:{type:String, required:false},
     schoolName:{type:String, required:true},
+    admin:{type:Boolean, required:true, default:false},
     createdAt:{type:Date, default:Date.now}
 });
 

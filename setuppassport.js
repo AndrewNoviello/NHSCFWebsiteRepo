@@ -17,16 +17,22 @@ module.exports= function(){
     passport.use("login", new LocalStrategy({
         usernameField:'email',
         passwordField:'password'
-    }, function(email, password, done){
+    }, function(username, password, done){
         console.log("In Passport Authenticate");
-        User.findOne({prefEmail:email}, function(err, user){
-            if(err){return done(err);}
+        User.findOne({prefEmail:username}, function(err, user){
+            if(err){
+                console.log("In Passport Error 1");    
+                return done(err);
+            }
             if(!user){
                 console.log("No User Has That Email")
                 return done(null, false, {message: "No User Has That Email"});
             }
             user.checkPassword(password, function(err, isMatch){
-                if(err){return done(err);}
+                if(err){
+                    console.log("In Passport Error 2"); 
+                    return done(err);
+                }
                 if(isMatch){
                     return done(null, user);
                 } else{
