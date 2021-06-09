@@ -1,0 +1,71 @@
+<%- include ("../_partials/_header.ejs"); %>
+
+<div class="topPic">
+    <div class="navbar" role="navigation">
+     <div class="container">
+        <div class="navbar-header">
+        <p class="navText" href="/">The National High School Climate Forum</p>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+        <li class="navText"><a class="navText" href="/home">Home</a></li>
+        <% if(currentUser != null){%>
+            <li><a class="navText" href="/dashboard">Dashboard</a></li>
+            <li><a class="navText" href="/logout">Logout</a></li>
+        <%}%>
+
+        <% if(currentUser == null){%>
+            <li><a class="navText" href="/login">Log In</a></li>
+            <li><a class="navText" href="/signup">Sign Up</a></li>
+            <li><a class="navText" href="/join">Join</a></li>
+        <%}%>
+        </ul>
+    </div>
+</div>
+<div class="welcomeText">Upload an NHSCF Newsletter</div>
+<div class="welcomeText2">
+    <p style="font-size: 16px"><i>Quote</i></p>
+</div>
+</div>
+
+
+
+<div style="background-color: whitesmoke; margin: 16px; padding: 16px">
+    <form action="/uploadNewsletter" method="POST" enctype="multipart/form-data">
+        <h4>Create an Event</h4>
+        <div>
+            <label for="month">Month of the Newsletter</label>
+            <input type="text" id="newsletterMonth" placeholder="Month"
+                value="" name="newsletterMonth" required>
+        </div>
+        <div>
+            <label for="year">Month of the Newsletter</label>
+            <input type="text" id="newsletterYear" placeholder="Year"
+                value="" name="newsletterYear" required>
+        </div>
+        <div>
+            <label for="releaseDate">Release Date of the Newsletter</label>
+            <input type="text" id="releaseDate" placeholder="Release Date"
+                value="" name="releaseDate" required>
+        </div>
+
+        <div>
+            <label for="files">Upload Newsletter PDF</label>
+            <input type="file" id="newsletter"
+                name="newsletter" value="" required multiple>
+        </div>
+
+        <div>
+            <label for="files">Upload Newsletter Cover Image</label>
+            <input type="file" id="image"
+                name="image" value="" required multiple>
+        </div>
+
+        <div>
+            <button type="submit">Upload Newsletter</button>
+        </div>
+    </form>
+</div>
+
+
+
+<%- include ("../_partials/_footer.ejs"); %>

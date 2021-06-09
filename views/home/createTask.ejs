@@ -1,0 +1,69 @@
+<%- include ("../_partials/_header.ejs"); %>
+
+<div class="col-md-8">
+ 
+    <div class="panel panel-default">
+ 
+        <div class="panel-heading">
+            <h3>Create Task</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-signin" method="POST" action="/createTask">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Event Title" name="title" aria-describedby="basic-addon1">
+                </div>
+                <br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Description" name="description" aria-describedby="basic-addon1">
+                </div>
+                <br />
+                <div class="input-group">
+                    <select name="commAssign" placeholder="Committee Assignment">
+                        <option name="recruitment" value="rec">Recruitment</option>
+                        <option name="writing" value="write">Writing</option>
+                        <option name="planning" value="plan">Planning</option>
+                    </select>
+                </div>
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Task Due Date" name="dueDate"
+                        aria-describedby="basic-addon1">
+                </div>
+                <br />
+                <input type="submit" class="btn btn-default navbar-btn" value="Create Task" />
+ 
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-8">
+ 
+    <div class="panel panel-default">
+ 
+        <div class="panel-heading">
+            <h3>Delete Task</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-signin" method="POST" action="/deleteTask">
+                <div class="input-group">
+                    <select class="mdb-select md-form" searchable="Search here.." id="example-select" name="deltasks">
+                        <option value="" disabled selected>Choose Task to Set Inactive</option>
+                        <% activeTasks.forEach(function(task){%>
+                            <option value="<%=task.title%>"><%=task.title%></option>
+                        <%})%>
+                    </select>
+                </div>
+                <br />
+                <input type="submit" class="btn btn-default navbar-btn" value="Delete Task" />
+ 
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include ("../_partials/_footer.ejs"); %>

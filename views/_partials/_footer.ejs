@@ -1,0 +1,41 @@
+</div>
+<footer class="footerbackground">
+    <div class="row" style="padding: 10px">
+    <p style="float: left; width: 25%; font-size: 36px; color: white; margin: 16px; margin-top: 50px"><b>The National High School Climate Forum</b></p>
+    <img src="public/Scene1.jpg" style="width: 25%; margin: 16px; float: right">
+    <div style="float: left; width: 20%; margin: 16px; margin-top: 50px">
+    <ul style="list-style-type: none; position: relative;">
+        <li><a  style="color: white; font-size: 24px;" href="/home">&#10140 Home</a></li>
+        <% if(currentUser != null){%>
+            <li><a style="color: white; font-size: 24px;" href="/dashboard">&#10140 Dashboard</a></li>
+            <li><a style="color: white; font-size: 24px;" href="/logout">&#10140 Logout</a></li>
+        <%}%>
+
+        <% if(currentUser == null){%>
+            <li><a style="color: white; font-size: 24px;" href="/login">&#10140 Log In</a></li>
+            <li><a style="color: white; font-size: 24px;" href="/signup">&#10140 Sign Up</a></li>
+            <li><a style="color: white; font-size: 24px;" href="/join">&#10140 Join</a></li>
+        <%}%>
+    </ul>
+    </div>
+    <div style="float: left; margin-top: 50px;">
+        <p style="color: white; font-size: 24px;"><u>Contact Us</u></p>
+        <a style="color: white; font-size: 18px" href= "mailto: abnoviello23@lawrenceville.org">Send Us an Email!</a>
+        <br>
+        <br>
+        <br>
+        <a style="color: white; font-size: 18px;" href="https://www.climate.gov/">Learn About Climate Change!</a>
+    </div>
+    </div>
+<div>
+    <p style="color: white; font-style: italic; font-size: 20px; text-align: center; padding: 24px">
+        The National High School Climate Forum was founded in September 2020 with the goal of fostering an exchange
+        of ideas between high school enviornmental leaders across the country...
+    </p>
+    <p style="color: darkgreen; text-align: center; margin-top: 24px; font-size: 12px">
+        This website was created in June 2021 by Alex and Andrew Noviello of The Lawrenceville School for the sole use of the National High School Climate Forum.
+    </p>
+</div>
+</footer>
+</body>
+</html>

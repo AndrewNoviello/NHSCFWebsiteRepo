@@ -1,0 +1,47 @@
+<%- include ("../_partials/_header.ejs"); %>
+
+<div class="topPic">
+    <div class="navbar" role="navigation">
+     <div class="container">
+        <div class="navbar-header">
+        <p class="navText" href="/">The National High School Climate Forum</p>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+        <li class="navText"><a class="navText" href="/home">Home</a></li>
+        <% if(currentUser != null){%>
+            <li><a class="navText" href="/dashboard">Dashboard</a></li>
+            <li><a class="navText" href="/logout">Logout</a></li>
+        <%}%>
+
+        <% if(currentUser == null){%>
+            <li><a class="navText" href="/login">Log In</a></li>
+            <li><a class="navText" href="/signup">Sign Up</a></li>
+            <li><a class="navText" href="/join">Join</a></li>
+        <%}%>
+        </ul>
+    </div>
+</div>
+<div class="welcomeText">National High School Climate Forum Newsletters</div>
+<div class="welcomeText2">
+    <p style="font-size: 16px"><i>Quote</i></p>
+</div>
+</div>
+
+<p style="font-style: italic; font-size: 18px; color: black; margin: 16px;"><b>Check out this list of National High School Climate Forum Newsletters, in chronological order. See what the forum has been up to and gain ideas for your own sustainability, conservation, or other environmental initiatives at your school!</b></p>
+
+<div style="height: 90%; overflow: auto;">
+    <% items.forEach(function(newsletter) { %>
+    <div style="float: left; width: 33%; margin: 16px; background-color: whitesmoke; height: 750px; position: relative">
+            <a href="public/NewsletterUploads/<%=newsletter.newsletterPDFFileName%>" target="_blank">
+            <img src="public/NewsletterUploads/<%=newsletter.newsletterImgFileName%>" style="width: 100%">
+            </a>
+            <p style="font-size: 24px; color: darkgreen; padding: 8px"><b><i>National High School Climate Forum <%=newsletter.newsletterMonth%> <%=newsletter.newsletterYear%> Newsletter</b></i></p>     
+            <p style="font-size: 18px; color: black; padding: 8px"><b>Check out what the forum did in <%=newsletter.newsletterMonth%> <%=newsletter.newsletterYear%>!</b></p>
+            <p style="position: absolute; right: 5px; bottom: 3px; font-size: 14px; color: black; padding: 8px"><i>Release Date: <%=newsletter.releaseDate%></i></p>
+        
+    </div>
+    <% }) %>
+</div>
+
+
+<%- include ("../_partials/_footer.ejs"); %>

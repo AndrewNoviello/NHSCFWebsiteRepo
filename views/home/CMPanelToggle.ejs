@@ -1,0 +1,575 @@
+<%- include ("../_partials/_header.ejs"); %>
+<style>.navbar-nav {
+	width: 100%
+}
+
+@media(min-width:568px) {
+	.end {
+		margin-left: auto
+	}
+}
+
+@media(max-width:768px) {
+	#post {
+		width: 100%
+	}
+}
+
+#clicked {
+	padding-top: 1px;
+	padding-bottom: 1px;
+	text-align: center;
+	width: 100%;
+	background-color: darkgreen;
+	border-color: darkgreen;
+	color: black;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 13px
+}
+
+#profile {
+	background-color: whitesmoke
+}
+
+#post {
+	margin: 10px;
+	padding: 6px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	text-align: center;
+	background-color: darkgreen;
+	border-color:darkgreen;
+	color: black;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 13px;
+	width: 50%
+}
+
+body {
+	background-color: white
+}
+
+#nav-items li a,
+#profile {
+	text-decoration: none;
+	color: black;
+	background-color: black
+}
+
+.comments {
+	margin-top: 5%;
+	margin-left: 20px
+}
+
+.darker {
+	border: 1px solid black;
+	background-color: white;
+	float: right;
+	border-radius: 5px;
+	padding-left: 40px;
+	padding-right: 30px;
+	padding-top: 10px
+}
+
+.comment {
+	border: 1px solid whitesmoke;
+	background-color: whitesmoke;
+	float: left;
+	border-radius: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px
+}
+
+.comment h4,
+.comment span,
+.darker h4,
+.darker span {
+	display: inline
+}
+
+.comment p,
+.comment span,
+.darker p,
+.darker span {
+	color: black
+}
+
+h1,
+h4 {
+	color: black;
+	font-weight: bold
+}
+
+label {
+	color: black
+}
+
+#align-form {
+	margin-top: 20px
+}
+
+.form-group p a {
+	color: black
+}
+
+#checkbx {
+	background-color: white
+}
+
+#darker img {
+	margin-right: 15px;
+	position: static
+}
+
+.form-group input,
+.form-group textarea {
+	background-color: darkgreen;
+	border: 1px solid darkgreen;
+	border-radius: 12px
+}
+
+form {
+	border: 1px solid black;
+	background-color: whitesmoke;
+	border-radius: 5px;
+	padding: 20px
+}</style>
+<div class="topPic">
+    <div class="navbar" role="navigation">
+     <div class="container">
+        <div class="navbar-header">
+        <p class="navText" href="/">The National High School Climate Forum</p>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+        <li class="navText"><a class="navText" href="/home">Home</a></li>
+        <% if(currentUser != null){%>
+			<li><a class="navText" href="/dashboard">Dashboard</a></li>
+			<li><a class="navText" href="/logout">Logout</a></li>
+        <%}%>
+
+        <% if(currentUser == null){%>
+            <li><a class="navText" href="/login">Log In</a></li>
+            <li><a class="navText" href="/signup">Sign Up</a></li>
+        <%}%>
+        </ul>
+    </div>
+</div>
+<div class="welcomeText">National High School Climate Forum Committee Member Dashboard</div>
+
+</div>
+<div class="container">
+	<div class="container">
+		<p style="font-size: 16px; text-align: left; font: italic; color: black">
+			<b><i>Use the panel below to navigate between subcommittee information and the announcements blog. 
+			Please check the announcements panel and your subcommittee panel regularly. Thanks!</i></b></p>
+		<ul class="nav nav-tabs CMToggleButtons">
+			<li class="active">
+				<a class="CMToggleButtons" data-toggle="tab"
+				href="#chat">Chat</a>
+			</li>
+			<li>
+				<a class="CMToggleButtons" data-toggle="tab"
+				href="#writing">Writing</a>
+			</li>
+			<li>
+				<a class="CMToggleButtons" data-toggle="tab"
+				href="#recruitment">Recruitment</a>
+			</li>
+			<li><a class="CMToggleButtons" data-toggle="tab"
+				href="#planning">Planning</a>
+			</li>
+			<%if(currentUser.admin == true){%>
+				<li><a class="CMToggleButtons" data-toggle="tab"
+					href="#adminpanel">Admin Panel</a>
+				</li>
+			<%}%>
+		</ul>
+
+		<div class="tab-content">
+			<div id="chat" class=
+				"tab-pane fade in active">
+				<!-- Main Body -->
+				<section>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-5 col-md-6 col-12 pb-4">
+								<h1 style="color: black">Announcements</h1>
+								<% activePosts.forEach(function(post){%>
+									<div class="comment float-left" style="width: 100%; border-color: darkgreen; border-width: 2px"> 
+										<h4><%=post.title%></h4> 
+										<h5><%=post.createdAt%></h5>
+										<br/>
+										<p><%=post.content%></p>
+									</div>
+								
+									<%comments.forEach(function(comment){%>
+										<% if(post.title == comment.announcement){%>
+											<div style="padding: 5px; width: 90%; background-color: rgb(253, 253, 253); float:right; border-color: darkgreen; border-radius: 5px; border-style: solid; border-width: 1px;">
+											<h4 style="font-size: 16px; color: black; padding-bottom: 5px;"><%=comment.title%></h4>
+											<h5 style="font-size: 14px; color: black; padding-bottom: 5px;"><%=comment.user%> : <%=comment.createdAt%></h5>
+											
+											<p><%= comment.content%></p>
+											</div>
+										<%}%>
+									<%})%>
+									
+								<%})%>
+							</div>
+							<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+								<form method="POST" action="/addComment">
+									<div class="form-group">
+										<h4>Comment</h4><label>Comment Title</label> <input class="form-control" style="color:black; background-color: white;" name="commTitle" aria-describedby="basic-addon1"/>
+									</div>
+									<div class="form-group">
+										<label>Message:</label> <textarea class="form-control" style="color:black; background-color: white;" name="commCon" aria-describedby="basic-addon1"></textarea>
+									</div>
+									<div class="form-group"> 
+										<label>Announcement Name To Comment On:</label>
+										<select class="mdb-select md-form" searchable="Search here.." id="example-select" name="compost">
+											<option value="" disabled selected>Post To Comment On</option>
+											<% activePosts.forEach(function(post){%>
+												<option value="<%=post.title%>"><%=post.title%></option>
+											<%})%>
+										</select>
+									</div>
+									<div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Add Comment" /></div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div id="writing" class="tab-pane fade">
+
+
+				<section>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-5 col-md-6 col-12 pb-4">
+								<h1 style="color: black">Writing Committee Tasks</h1>
+								<% writeTasks.forEach(function(writeTask) {%>
+									<div class="comment float-left" style="width: 100%; border-color: darkgreen; border-width: 2px"> 
+										<h4><%= writeTask.title %></h4> 
+										<h5>Task Due Date: <%= writeTask.dueDate%></h5>
+										<br/>
+										<p><%= writeTask.description%></p>
+									</div>									
+								<%})%>
+							</div>
+							<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+								<form method="POST" action="#">
+									<div class="form-group"> 
+										<h4>Task Sign Up</h4><label>Sign Up For a Task:</label>
+										<select class="mdb-select md-form" searchable="Search here.." id="example-select" name="compost">
+											<option value="" disabled selected>Writing Tasks</option>
+											<% writeTasks.forEach(function(writeTask) {%>
+												<option value="<%=writeTask.title%>"><%=writeTask.title%></option>
+											<%})%>
+										</select>
+									</div>
+									<div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Sign Up" /></div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div id="recruitment" class="tab-pane fade">
+				<section>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-5 col-md-6 col-12 pb-4" style="min-height: 600px">
+								<h1 style="color: black">Recruiting Committee Tasks</h1>
+								<% recruitTasks.forEach(function(recTask) {%>
+									<div class="comment float-left" style="width: 100%; border-color: darkgreen; border-width: 2px;"> 
+										<h4><%= recTask.title %></h4> 
+										<h5>Task Due Date: <%= recTask.dueDate%></h5>
+										<br/>
+										<p><%= recTask.description%></p>
+									</div>									
+								<%})%>
+							</div>
+							<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+								<form method="POST" action="#">
+									<div class="form-group"> 
+										<h4>Task Sign Up</h4><label>Sign Up For a Task:</label>
+										<select class="mdb-select md-form" searchable="Search here.." id="example-select" name="compost">
+											<option value="" disabled selected>Recruiting Tasks</option>
+											<% recruitTasks.forEach(function(recTask) {%>
+												<option value="<%=recTask.title%>"><%=recTask.title%></option>
+											<%})%>
+										</select>
+									</div>
+									<div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Sign Up" /></div>
+									<a href="https://docs.google.com/document/d/1EYjsOF0G6OAxoMke9CvzL3YapFtdsgO7pmYZlIFXjhM/edit?usp=sharing" target="_blank" rel="noopener noreferrer">View The Recruitment Guide</a>
+								</form>
+							</div>
+						
+						<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4" style="margin-top: 15px;">
+							<form method="POST" action="/emailForm">
+								<div class="form-group"> 
+									<h4>Recruitment Email Form Tool</h4><p>This tool will automatically send the recruitment template email from you (signed in as a committee member) to the individual specified in your input.</p><label>Recipient Email Address</label>
+									<input style="background-color: white" type="text" class="form-control" placeholder="Email Address" name="emailAddr" aria-describedby="basic-addon1">
+								</div>
+								<div class="form-group">
+									<label>Recipient Full Name (with Ms./Mr.)</label>
+									<input style="background-color: white" type="text" class="form-control" placeholder="Recipient Full Name (with Ms./Mr.)" name="recipient" aria-describedby="basic-addon1">
+								</div>
+								<div class="form-group">
+									<label>Recipient School Name</label>
+									<input style="background-color: white" type="text" class="form-control" placeholder="Recipient School Name" name="schoolName" aria-describedby="basic-addon1">
+								</div>
+								<div class="form-group">
+									<label>Recipient Position</label>
+									<input style="background-color: white" type="text" class="form-control" placeholder="Recipient Position" name="position" aria-describedby="basic-addon1">
+								</div>
+								<div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Send" /></div>							
+							</form>
+						</div>
+					</div>
+					</div>
+				</section>
+			</div>
+			<div id="planning" class="tab-pane fade">
+				<section>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-5 col-md-6 col-12 pb-4">
+								<h1 style="color: black">Planning Committee Tasks</h1>
+								<% planTasks.forEach(function(planTask) {%>
+									<div class="comment float-left" style="width: 100%; border-color: darkgreen; border-width: 2px"> 
+										<h4><%= planTask.title %></h4> 
+										<h5>Task Due Date: <%= planTask.dueDate%></h5>
+										<br/>
+										<p><%= planTask.description%></p>
+									</div>									
+								<%})%>
+							</div>
+							<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+								<form method="POST" action="#">
+									<div class="form-group"> 
+										<h4>Task Sign Up</h4><label>Sign Up For a Task:</label>
+										<select class="mdb-select md-form" searchable="Search here.." id="example-select" name="compost">
+											<option value="" disabled selected>Planning Tasks</option>
+											<% planTasks.forEach(function(planTask) {%>
+												<option value="<%=planTask.title%>"><%=planTask.title%></option>
+											<%})%>
+										</select>
+									</div>
+									<div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Sign Up" /></div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div id="adminpanel" class="tab-pane fade">
+				<div class="col-md-8">
+ 
+					<div class="panel panel-default">
+				 
+						<div class="panel-heading">
+							<h3>Add Post</h3>
+						</div>
+						<div class="panel-body">
+							<form class="form-signin" method="POST" action="/addPost">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">@</span>
+									<input type="text" class="form-control" placeholder="Post Title" name="title" aria-describedby="basic-addon1">
+								</div>
+								<br/>
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">@</span>
+									<input type="text" class="form-control" placeholder="Post Content" name="content" aria-describedby="basic-addon1">
+								</div>
+								<br />
+								
+								<input type="submit" class="btn btn-default navbar-btn" value="Add Post" />
+				 
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-8">
+ 
+					<div class="panel panel-default">
+				 
+						<div class="panel-heading">
+							<h3>Delete Post</h3>
+						</div>
+						<div class="panel-body">
+							<form class="form-signin" method="POST" action="/deletePost">
+								<div class="input-group">
+									<select class="mdb-select md-form" searchable="Search here.." id="example-select" name="delposts">
+										<option value="" disabled selected>Choose Post to Delete</option>
+										<% activePosts.forEach(function(post){%>
+											<option value="<%=post.title%>"><%=post.title%></option>
+										<%})%>
+									</select>
+								</div>
+								<br/>								
+								<input type="submit" class="btn btn-default navbar-btn" value="Make Post Not Commentable" />
+				 
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+ 
+					<div class="panel panel-default">
+				 
+						<div class="panel-heading">
+							<h3>Delete Comment</h3>
+						</div>
+						<div class="panel-body">
+							<form class="form-signin" method="POST" action="/deleteComment">
+								<div class="input-group">
+									<select class="mdb-select md-form" searchable="Search here.." id="example-select" name="delcomms">
+										<option value="" disabled selected>Choose Comment to Delete</option>
+										<% comments.forEach(function(comment){%>
+											<option value="<%=comment.title%>"><%=comment.title%></option>
+										<%})%>
+									</select>
+								</div>
+								<br/>								
+								<input type="submit" class="btn btn-default navbar-btn" value="Delete Comment" />
+				 
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-8">
+ 
+					<div class="panel panel-default">
+				 
+						<div class="panel-heading">
+							<h3>Create Task</h3>
+						</div>
+						<div class="panel-body">
+							<form class="form-signin" method="POST" action="/createTask">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">@</span>
+									<input type="text" class="form-control" placeholder="Event Title" name="title" aria-describedby="basic-addon1">
+								</div>
+								<br/>
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">@</span>
+									<input type="text" class="form-control" placeholder="Description" name="description" aria-describedby="basic-addon1">
+								</div>
+								<br />
+								<div class="input-group">
+									<select name="commAssign" placeholder="Committee Assignment">
+										<option name="recruitment" value="rec">Recruitment</option>
+										<option name="writing" value="write">Writing</option>
+										<option name="planning" value="plan">Planning</option>
+									</select>
+								</div>
+								<br />
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">@</span>
+									<input type="text" class="form-control" placeholder="Task Due Date" name="dueDate"
+										aria-describedby="basic-addon1">
+								</div>
+								<br />
+								<input type="submit" class="btn btn-default navbar-btn" value="Create Task" />
+				 
+							</form>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="col-md-8">
+				 
+					<div class="panel panel-default">
+				 
+						<div class="panel-heading">
+							<h3>Delete Task</h3>
+						</div>
+						<div class="panel-body">
+							<form class="form-signin" method="POST" action="/deleteTask">
+								<div class="input-group">
+									<select class="mdb-select md-form" searchable="Search here.." id="example-select" name="deltasks">
+										<option value="" disabled selected>Choose Task to Set Inactive</option>
+										<% activeTasks.forEach(function(task){%>
+											<option value="<%=task.title%>"><%=task.title%></option>
+										<%})%>
+									</select>
+								</div>
+								<br />
+								<input type="submit" class="btn btn-default navbar-btn" value="Delete Task" />
+				 
+							</form>
+						</div>
+					</div>
+				</div>
+					
+				<div>
+					<form action="/eventCreate" method="POST" enctype="multipart/form-data">
+						<h4>Create an Event</h4>
+						<div>
+							<label for="name">Event Title</label>
+							<input type="text" id="eventName" placeholder="Event Name"
+								value="" name="eventName" required>
+						</div>
+						<div>
+							<label for="desc">Event Description</label>
+							<textarea id="eventDesc" name="eventDesc" value="" rows="2"
+									placeholder="Event Description" required>
+							</textarea>
+						</div>
+						<div>
+							<label for="date">Event Date</label>
+							<textarea id="eventDate" name="eventDate" value="" rows="2"
+									placeholder="Event Date" required>
+							</textarea>
+						</div>
+						<div>
+							<label for="numfields">Number of Event Fields</label>
+							<input type="number" id="numEventFields" name="numEventFields" value="" rows="2"
+									placeholder="Number of Event Fields" required>
+							</input>
+						</div>
+						<div>
+							<label for="fields">Event Fields</label>
+							<textarea id="eventFields" name="eventFields" value="" rows="2"
+									placeholder="Event Fields" required>
+							</textarea>
+						</div>
+						<div>
+							<label for="isPublic">Is the event public?</label>
+							<input id="isPublic" name="isPublic" value="" rows="2"
+									placeholder="Yes or No" required>
+							</input>
+						</div>
+						<div>
+							<label for="isOpen">Is the event open for registration?</label>
+							<input id="isOpen" name="isOpen" value="" rows="2"
+									placeholder="Yes or No" required>
+							</input>
+						</div>
+			
+						<div>
+							<label for="image">Upload Image</label>
+							<input type="file" id="image"
+								name="image" value="" required>
+						</div>
+						<div>
+							<button type="submit">Create Event</button>
+						</div>
+					</form>
+				</div>
+			
+				<hr>
+			
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include ("../_partials/_footer.ejs"); %>
