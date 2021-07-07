@@ -4,8 +4,11 @@ const recruitmentEmailTemplate = "Dear contactname,\nMy name is cmmname and I am
 
 var adminEmails = ["acnoviello23@lawrenceville.org", "abnoviello23@lawrenceville.org"];
 
+var eventRegisterEmailTemplate = "Dear ATTENDEE, <br>On behalf of the National High School Climate Forum Leadership Committee, thank you for registering for our upcoming event, EVENTNAME, which will be taking place on <b>EVENTDATE</b>. The goal of our events is to spread education about climate change-related issues and, by attending, you are making an effort to increase your education on these problems and to better equip yourself with the insight to help solve them.<br><br>We look forward to seeing you soon and hope that you will encourage other students at SCHOOLNAME to attend, as well!<br><br>Sincerely,<br>The National High School Climate Forum";
+
 module.exports={
     DATABASECONNECTION,
     recruitmentEmailTemplate,
+    eventRegisterEmailTemplate,
     adminEmails
 }

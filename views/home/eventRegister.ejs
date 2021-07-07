@@ -3,15 +3,35 @@
 <div class="fullPagePic">
 	<div style="text-align: center">
         
-		<form action="/eventRegister" method="POST" enctype="multipart/form-data" class="registerFormContainer">
+		<form method="POST" action="/eventRegister" class="registerFormContainer">
             <h1 style="color: darkgreen; text-align: center"><b><i><%=info.eventName%></i></b></h1>
-        	<p style="text-indent: 25px"><%=info.eventDesc%></p>
+			<p style="text-indent: 25px"><%=info.eventDesc%></p>
+			<input type="hidden" name="curEventName" id="curEventName" value="<%=info.eventName%>">
+			<input type="hidden" name="curEventDate" id="curEventDate" value="<%=info.eventDate%>">
+			<div>
+				<label for="name" style="padding-bottom: 15px;">Name</label>
+				<input style="float: right;" type="text" id="attendeeName" placeholder="Please enter your full name"
+					name="attendeeName" required>
+				
+			</div>
+			<div>
+				<label for="name" style="padding-bottom: 15px;">School Name</label>
+				<input style="float: right;" type="text" id="attendeeSchool" placeholder="Please enter your school name"
+					name="attendeeSchool" required>
+				
+			</div>
+			<div>
+				<label for="name" style="padding-bottom: 15px;">Email Address</label>
+				<input style="float: right;" type="text" id="attendeeEmail" placeholder="Please enter your email address"
+					name="attendeeEmail" required>
+				
+			</div>
 			<% items.forEach(function(field) { %>
 				<div>
 				
 				<label for="name" style="padding-bottom: 15px;"><%=field%></label>
 				<input style="float: right;" type="text" id="<%=field%>" placeholder="<%=field%>"
-					value="" name="<%=field.replace(/ /g, '')%>" required>
+					name="<%=field.replace(/ /g, '').replace(/\t/g, '')%>" required>
 				
 				</div>
             <% }) %>

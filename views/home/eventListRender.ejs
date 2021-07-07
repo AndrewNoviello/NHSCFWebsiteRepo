@@ -42,21 +42,23 @@
 					<p class="eventName"><b><%= event.eventName %></b></p>
                     <p class="eventDescription"><%= event.eventDesc %></p>
                     <p class="eventDate"><b>Event Date: <%= event.eventDate %></b></p>
-                    <button class="eventRegisterButton" onclick="sendData('<%=event.eventName%>')">Register</button>
-                    <script>
-                        function sendData(eventNameData){
-                            $.ajax({
-                                type: 'POST',
-                                url: '/curEvent',
-                                data: { name: eventNameData }
-                            })
-                            location.href = '/eventRegister';
-                        }
-                    </script>
+                    
+                    <% if(currentUser && (currentUser.prefEmail == "abnoviello23@lawrenceville.org" || currentUser.prefEmail == "acnoviello23@lawrenceville.org")){%>
+                        <form method="GET" action="/adminEvents">
+                            <input type="hidden" id="adminSelectedEventName" name="adminSelectedEventName" value="<%= event.eventName%>">
+                            <input class="eventRegisterButton" type="submit" value="Manage">
+                        </form>
+                    <%}else {%>
+                        <form method="GET" action="/eventRegister">
+                            <input type="hidden" id="chosenEventName" name="chosenEventName" value="<%= event.eventName%>">
+                            <input class="eventRegisterButton" type="submit" value="Register">
+                        </form>
+                    <%}%>
 				</div>
 			</div>
             
 		</div>
+        
 		<% }) %>
 	</div>
 

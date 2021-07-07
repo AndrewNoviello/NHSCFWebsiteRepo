@@ -1,0 +1,89 @@
+<%- include ("../_partials/_header.ejs"); %>
+
+<div>
+    <form method="POST" action="/createNewsletter2">
+    <h1>Select Activity Writings</h1>
+    <input type="hidden" id="month" name="month" value="<%=month%>">
+    <input type="hidden" id="year" name="year" value="<%=year%>">
+    <% if(activityWritings){ %>
+        <% activityWritings.forEach(function(piece) { %>
+            <input type="checkbox" name="activityWriting_element" value="<%=piece._id%>">
+            <p>Author: <%=piece.authorName%> '<%=piece.authorGradYear-2000%> Submitted: <%=piece.dateSubmitted%></p>
+            <p><%=piece.fullText%></p>
+    <%});} else {%>
+        <p>No Activity Writings Created</p>
+    <%}%>
+    <label>Select No Activity Writings: </label>
+    <input type="checkbox" name="activityWriting_element" value="NoneClicked">
+
+    <h1>Select Sustainability Tips</h1>
+    <% if(susTips){ %>
+    <% susTips.forEach(function(tip) { %>
+        <input type="checkbox" name="susTip_element" value="<%=tip._id%>">
+        <p>Author: <%=tip.susTipAuthorName%> <%=tip.susTipAuthorSchool%> '<%=tip.susTipAuthorGradYear-2000%></p>
+        <h3><%=tip.susTipTitle%></h3>
+        <p><%=tip.susTipFullText%></p>
+    <%});} else {%>
+            <p>No Sustainability Tips Created</p>
+    <%}%>
+    <label>Select No Sustainability Tips: </label>
+    <input type="checkbox" name="susTip_element" value="NoneClicked">
+
+    <h1>Select Outside Programs</h1>
+    <% if(outsidePrograms){ %>
+    <% outsidePrograms.forEach(function(prog) { %>
+        <input type="checkbox" name="outsideProgram_element" value="<%=prog._id%>">
+        <p>Program Name: <%=prog.programName%> Host Organization: <%=prog.programHost%></p>
+        <h3>Dates: <%=prog.programDates%></h3>
+        <p>Description: <%=prog.programDesc%></p>
+    <%});} else {%>
+        <p>No Outside Programs Created</p>
+    <%}%>
+    <label>Select No Outside Programs: </label>
+    <input type="checkbox" name="outsideProgram_element" value="NoneClicked">
+    
+
+    <h1>Select Additional Articles</h1>
+    <% if(otherArticles){%>
+    <% outsidePrograms.forEach(function(article) { %>
+        <input type="checkbox" name="otherArticles_element" value="<%=article._id%>">
+        <p>Article Title: <%=article.articleTitle%> Author: <%=article.authorName%> <%=article.authorSchoolName%> '<%=article.authorGradYear%></p>
+        <p><%=article.fullText%></p>
+    <%});} else {%>
+        <p>No Other Articles Created</p>
+    <%}%>
+    <label>Select No Additional Articles: </label>
+    <input type="checkbox" name="otherArticles_element" value="NoneClicked">
+
+    <h1>Select Interesting Links</h1>
+    <% if(interestingLinks){%>
+        <% interestingLinks.forEach(function(link) { %>
+            <input type="checkbox" name="interestingLinks_element" value="<%=link._id%>">
+            <p>Link Title: <%=link.linkTitle%></p>
+            <p>Link: <%=link.link%></p>
+            <p><%=link.linkDesc%></p>
+        <%});} else {%>
+            <p>No Interesting Links Created</p>
+    <%}%>
+    <label>Select No Interesting Links: </label>
+    <input type="checkbox" name="interestingLinks_element" value="NoneClicked">
+
+    <h1>Select School Events</h1>
+    <% if(schoolEvents){%>
+        <% schoolEvents.forEach(function(event) { %>
+            <input type="checkbox" name="schoolEvents_element" value="<%=event._id%>">
+            <p>Host School: <%=event.schoolName%></p>
+            <p><%=event.schoolEventDesc%></p>
+    <%});} else {%>
+        <p>No School Events Created</p>
+    <%}%>
+    <label>Select No School Events: </label>
+    <input type="checkbox" name="schoolEvents_element" value="NoneClicked">
+
+    <h1>Create Newsletter</h1>
+        <div>
+            <input type="submit" value="Submit Choices">
+        </div>
+    </form>
+    
+</div>

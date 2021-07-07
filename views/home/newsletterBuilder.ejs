@@ -1,0 +1,263 @@
+<%- include ("../_partials/_header.ejs"); %>
+
+<div>
+    <form method="POST" action="/submitActivityWriting" enctype="multipart/form-data">
+        <h1>Activity Writings</h1>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Author Name</label>
+            <input type="text" id="authorName" placeholder="Author Full Name"
+                name="authorName" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Author School</label>
+            <input type="text" id="authorSchool" placeholder="Author School Name"
+                name="authorSchool" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Author Graduation Year</label>
+            <input type="number" id="authorGradYear" placeholder="Please enter your gradutation year"
+                name="authorGradYear" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Date of Article Submission</label>
+            <input type="text" id="dateSubmitted" placeholder="Please the date you are submitting this article"
+                name="dateSubmitted" required>
+        </div>
+        <label style="padding-bottom: 15px;">Article Full Text</label>
+        <textarea style="width: 600px" id="fullText" name="fullText" value="" rows="50"
+						placeholder="" required>
+		</textarea>
+        <div>
+            <label for="image">Upload Image</label>
+            <input type="file" id="activityWritingImage"
+                name="activityWritingImage" value="" required>
+        </div>
+        <div>
+            <input type="submit" value="Submit Activity Writing">
+        </div>
+    </form>
+</div>
+
+<div style="margin-top: 200px;">
+    <h1>Sustainability Tips</h1>
+    <form method="POST" action="/submitSusTip" enctype="multipart/form-data">
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Author Name</label>
+            <input type="text" id="authorName" placeholder="Author Full Name"
+                name="authorName" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Author School</label>
+            <input type="text" id="authorSchool" placeholder="Author School Name"
+                name="authorSchool" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Author Graduation Year</label>
+            <input type="number" id="authorGradYear" placeholder="Please enter your gradutation year"
+                name="authorGradYear" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Sustainability Tip Title</label>
+            <input type="text" id="susTipTitle" placeholder="Please enter your tip's title"
+                name="susTipTitle" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Sustainability Tip Source URL</label>
+            <input type="url" id="susTipLink" placeholder="Please enter the link to your source"
+                name="susTipLink" required>
+        </div>
+        <label style="padding-bottom: 15px;">Full Sustainability Tip Text</label>
+        <textarea style="width: 600px" id="susTipFullText" name="susTipFullText" value="" rows="50"
+						placeholder="" required>
+		</textarea>
+        <div>
+            <label for="image">Upload Image</label>
+            <input type="file" id="susTipImage"
+                name="susTipImage" value="" required>
+        </div>
+        <div>
+            <input type="submit" value="Submit Sustainability Tip">
+        </div>
+    </form>
+</div>
+
+
+<div style="margin-top: 200px;">
+    <h1>Outside Programs</h1>
+    <form method="POST" action="/submitOutsideProgram" enctype="multipart/form-data">
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Finder Name</label>
+            <input type="text" id="finderName" placeholder="Finder Full Name"
+                name="finderName" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Finder School</label>
+            <input type="text" id="finderSchool" placeholder="Finder School Name"
+                name="finderSchool" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Finder Graduation Year</label>
+            <input type="number" id="finderGradYear" placeholder="Please enter your gradutation year"
+                name="finderGradYear" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Program Name</label>
+            <input type="text" id="programName" placeholder="Please enter the name of the program"
+                name="programName" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Program Host Organization</label>
+            <input type="text" id="programHost" placeholder="Please enter the name of the program's host organizations"
+                name="programHost" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Program Location</label>
+            <input type="text" id="programLocation" placeholder="Please enter the location of the program"
+                name="programLocation" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Program Dates or Timeframe</label>
+            <input type="text" id="programDates" placeholder="Please enter the dates/timeframe of the program"
+                name="programDates" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Program URL</label>
+            <input type="url" id="programLink" placeholder="Please enter the link to the program's website"
+                name="programLink" required>
+        </div>
+        <label style="padding-bottom: 15px;">Outside Program Description</label>
+        <textarea style="width: 600px" id="programDesc" name="programDesc" value="" rows="50"
+						placeholder="" required>
+		</textarea>
+        <div>
+            <label for="image">Upload Image</label>
+            <input type="file" id="programImage"
+                name="programImage" value="" required>
+        </div>
+        <div>
+            <input type="submit" value="Submit Outside Program">
+        </div>
+    </form>
+</div>
+
+<div style="margin-top: 200px;">
+    <h1>Additional Articles</h1>
+    <form method="POST" action="/submitOtherArticle">
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Author Name</label>
+            <input type="text" id="authorName" placeholder="Author Full Name"
+                name="authorName" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Author School</label>
+            <input type="text" id="authorSchool" placeholder="Author School Name"
+                name="authorSchool" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Author Graduation Year</label>
+            <input type="number" id="authorGradYear" placeholder="Please enter your gradutation year"
+                name="authorGradYear" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Date of Article Submission</label>
+            <input type="text" id="dateSubmitted" placeholder="Please the date you are submitting this article"
+                name="dateSubmitted" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Article Title</label>
+            <input type="text" id="articleTitle" placeholder="Please enter your article's title"
+                name="articleTitle" required>
+        </div>
+        <label style="padding-bottom: 15px;">Article Full Text</label>
+        <textarea style="width: 600px" id="articleFullText" name="articleFullText" value="" rows="50"
+						placeholder="" required>
+		</textarea>
+        <div>
+            <input type="submit" value="Submit Other Article">
+        </div>
+    </form>
+</div>
+
+<div style="margin-top: 200px;">
+    <h1>Interesting Links</h1>
+    <form method="POST" action="/submitInterestingLink">
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Link Finder/Author</label>
+            <input type="text" id="linkFinder" placeholder="Please enter your name"
+                name="linkFinder" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Link Finder/Author School</label>
+            <input type="text" id="linkFinderSchool" placeholder="Please enter your school name"
+                name="linkFinderSchool" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Interesting Link Title</label>
+            <input type="text" id="linkTitle" placeholder="Please enter your link's title"
+                name="linkTitle" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Interesting Link Description</label>
+            <textarea style="width: 600px" id="linKDesc" name="linkDesc" value="" rows="50"
+						placeholder="" required>
+		</textarea>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Link URL</label>
+            <input type="url" id="linkURL" placeholder="Please enter your link URL"
+                name="linkURL" required>
+        </div>
+        <div>
+            <input type="submit" value="Submit Interesting Link">
+        </div>
+    </form>
+</div>
+
+<div style="margin-top: 200px;">
+    <h1>School Events Submission</h1>
+    <form method="POST" action="/submitSchoolEvent">
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Event Host School Name</label>
+            <input type="text" id="schoolName" placeholder="School Name"
+                name="schoolName" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Date of School Event</label>
+            <input type="text" id="schoolEventDate" placeholder="Please enter the date of the event"
+                name="schoolEventDate" required>
+        </div>
+        <div>        
+            <select name="schoolEventTime">
+                <option name="ET" value="ET">ET</option>
+                <option name="PT" value="PT">PT</option>
+                <option name="CT" value="CT">CT</option>
+                <option name="MT" value="MT">MT</option>
+            </select>
+        </div>
+        <select name="schoolEventAmPm">
+            <option name="AM" value="AM">AM</option>
+            <option name="PM" value="PM">PM</option>
+        </select>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Time Zone of School Event</label>
+            <input type="text" id="schoolEventTimeZone" placeholder="Please enter the time zone for the event"
+                name="schoolEventTimeZone" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">Name of School Event</label>
+            <input type="text" id="schoolEventName" placeholder="Please enter the name of the event"
+                name="schoolEventName" required>
+        </div>
+        <div>
+            <label for="name" style="padding-bottom: 15px;">School Event Description</label>
+            <textarea style="width: 600px" id="schoolEventDesc" name="schoolEventDesc" value="" rows="50"
+						placeholder="" required>
+		</textarea>
+        </div>
+        <div>
+            <input type="submit" value="Submit School Event">
+        </div>
+    </form>
+</div>
+
+<%- include ("../_partials/_footer.ejs"); %>

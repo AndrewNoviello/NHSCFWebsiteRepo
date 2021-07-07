@@ -1,0 +1,45 @@
+<%- include ("../_partials/_header.ejs"); %>
+
+<form action="/createNewsletter1" method="POST">
+    <div>
+        <label for="month">Month of the Newsletter</label>
+        <input type="text" id="newsletterMonth" placeholder="Month"
+            value="" name="newsletterMonth" required>
+    </div>
+    <div>
+        <label for="year">Year of the Newsletter</label>
+        <input type="text" id="newsletterYear" placeholder="Year"
+            value="" name="newsletterYear" required>
+    </div>
+    <div>
+        <label for="releaseDate">Release Date of the Newsletter</label>
+        <input type="text" id="releaseDate" placeholder="Release Date"
+            value="" name="releaseDate" required>
+    </div>
+    <div>
+        <label for="quote">Associated Quote</label>
+        <input type="text" id="newsletterQuote" placeholder="Insert Quote for Newsletter"
+            value="" name="newsletterQuote" required>
+    </div>
+    <div>
+        <label for="quoteAuthor">Associated Quote Author</label>
+        <input type="text" id="newsletterQuoteAuthor" placeholder="Insert Quote Author for Newsletter"
+            value="" name="newsletterQuoteAuthor" required>
+    </div>
+    <div>
+        <label for="announcements">Announcements</label>
+        <textarea id="announcements" name="announcements" value="" rows="5"
+                placeholder="Announcements" required>
+        </textarea>
+    </div>
+    <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" value="" rows="10"
+                placeholder="Message" required>
+        </textarea>
+    </div>
+
+    <div>
+        <button type="submit">Submit General Newsletter Information</button>
+    </div>
+</form>

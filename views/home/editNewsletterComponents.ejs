@@ -1,0 +1,30 @@
+<%- include ("../_partials/_header.ejs"); %>
+
+<div>
+    <form method="POST" action="/editActivity Writing">
+    <h1>Select Activity Writings</h1>
+    
+        <% activityWritings.forEach(function(piece) { %>
+            <p>Author: <%=piece.authorName%> '<%=piece.authorGradYear-2000%> Submitted: <%=piece.dateSubmitted%></p>
+            <p><%=piece.fullText%></p>
+        <%});%>
+    </form>
+
+    <h1>Select Sustainability Tips</h1>
+
+    <% susTips.forEach(function(tip) { %>
+        <input type="checkbox" name="susTip_element" value="<%=tip._id%>">
+        <p>Author: <%=tip.susTipAuthorName%> <%=tip.susTipAuthorSchool%> '<%=tip.susTipAuthorGradYear-2000%></p>
+        <h3><%=tip.susTipTitle%></h3>
+        <p><%=tip.susTipFullText%></p>
+    <%});%>
+
+    <h1>Select Outside Programs</h1>
+    <h1>Select Additional Articles</h1>
+    <h1>Select Interesting Links</h1>
+    <h1>Select School Events</h1>
+
+    <h1>Create Newsletter</h1>
+        
+    
+</div>
