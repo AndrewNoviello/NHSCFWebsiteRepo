@@ -1,0 +1,22 @@
+<%- include ("../../_partials/_header.ejs"); %>
+
+<div class="topPic3">
+    <%- include ("../../_partials/_top_nav.ejs"); %>
+</div>
+<div class="welcomeText">National High School Climate Forum Newsletters</div>
+</div>
+
+<p style="font-style: italic; font-size: 18px; color: black; margin: 16px;"><b>Check out this list of National High School Climate Forum Newsletters, in chronological order. See what the forum has been up to and gain ideas for sustainability, conservation, and environmental initiatives at your school!</b></p>
+
+<div style="height: 90%; overflow: auto;">
+    <% items.forEach(function(newsletter) { %>
+    <div style="float: left; width: 30%; margin: 16px; background-color: whitesmoke; height: 675px; position: relative">
+            <a href="public/NewsletterUploads/<%=newsletter.newsletterPDFFileName%>" target="_blank">
+            <img src="public/NewsletterUploads/<%=newsletter.newsletterImgFileName%>" style="width: 100%">
+            </a>
+            <p style="font-size: 24px; color: darkgreen; padding: 8px"><b><i>National High School Climate Forum <%=newsletter.newsletterMonth%> <%=newsletter.newsletterYear%> Newsletter</b></i></p>
+            <p style="position: absolute; right: 5px; bottom: 3px; font-size: 14px; color: black; padding: 8px"><i>Release Date: <%=newsletter.releaseDate%></i></p>
+    </div>
+    <% }) %>
+</div>
+<%- include ("../../_partials/_footer.ejs"); %>

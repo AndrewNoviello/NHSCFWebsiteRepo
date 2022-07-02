@@ -1,0 +1,80 @@
+<%- include ("../_partials/_header.ejs"); %>
+
+<div class="topPic">
+    <%- include ("../_partials/_top_nav.ejs"); %>
+</div>
+<div class="welcomeText">Welcome to the National High School Climate Forum</div>
+</div>
+ 
+<div class="container">
+<div class="mainAboutCont">
+    <img class="mainAboutPic" src="/public/topPic1.jpg"></img>
+    <div class="mainAboutInfo">
+        <h5 style="color:darkgray"><b>Welcome to the National High School Climate Forum</b></h5>
+        <h2><b>What is our Mission?</b></h2>
+        <div>
+            <h4 style="color:darkgray">Our mission is to bring together sustainability and climate-action focused high schools from around the country to establish an exchange of initative ideas in our respective communities.</h4>
+        </div>
+        <h2><b>Why should your school join us?</b></h2>
+        <div>
+            <h4 style="color:darkgray">
+                There is absolutely no downside to joining us - you don't need to change any of your schools pre-existing climate initiatives. Just share them with the forum and gain further opportunities through our programming!
+            </h4>
+            <h4 style="color:darkgray">Today, the National High School Climate Forum has representation from <%=totalSchools%> schools in <%=totalStates%> states. What are you waiting for? Join us today!</h4>
+
+        </div>
+        <div class="tabulation-2 mt-4">
+            <ul class="nav nav-tabs" style="justify-content:center;">
+                <li class="nav-item">
+                    <button class="aboutToggleButtons" data-toggle="tab" href="#home1">Forum Platform</button>
+                </li>
+                <li class="nav-item">
+                    <button class="aboutToggleButtons" data-toggle="tab" href="#home2">Speaker Events</button>
+                </li>
+                <li class="nav-item">
+                    <button class="aboutToggleButtons" data-toggle="tab" href="#home3">National Summit</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content">        
+                <div class="tab-pane container active" id="home1">
+                    <h4 style="color:darkgray">
+                        Honing in on an actionable climate initiative at your school can be difficult. However, through our online forum and newsletters, member schools' student environmental leaders can learn about and borrow the ideas of their peers, while sharing their own work to a national audience. To view the interactive forum, you must login, but you can check out our newsletters on the "Newsletters" tab.
+                    </h4>
+                </div>
+                <div class="tab-pane container fade" id="home2">
+                    <h4 style="color:darkgray">
+                        Education is another crucial part of our mission at the National High School Climate Forum. Thus, we offer a few speaker events throughout the year to provide new and interesting perspectives on varying aspects of the climate crisis to our member schools' communities.
+                    </h4>
+                </div>
+                <div class="tab-pane container p-0 fade" id="home3">
+                    <h4 style="color:darkgray">We conclude each year with our National Youth Climate Summit, taking place every Spring. This event features guest speakers on broader topics than our individual speaker events,
+                    in addition to youth presentations and other programming. As with all our speaker events, the national summit takes place virtually.
+                </h4>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="homePageGetInvolved">
+    <div style="display: inline-block; margin-top: 10px;">
+    <button class="homePageRegisterButtons2">
+        <p style="color:white" onclick="window.location.href='/join'">Register Your School!</p>
+    </button>
+    <button class="homePageRegisterButtons1" onclick="window.location.href='/signup'">
+        <p style="color:white">Become a Committee Member!</p>
+    </button>
+    </div>
+    <div style="display: inline-block; margin-top: 10px;">
+        <button class="homePageRegisterButtons4" onclick="window.location.href='/events'">
+            <p style="color:white">Attend our Events!</p>
+        </button>
+        <button class="homePageRegisterButtons3" onclick="window.location.href='/newsletters'">
+            <p style="color:white">Read our Newsletters!</p>
+        </button>
+    </div>
+</div>
+
+<%- include ("../_partials/_footer.ejs"); %>

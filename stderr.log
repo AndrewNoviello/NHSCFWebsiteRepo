@@ -1,0 +1,341 @@
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+internal/modules/cjs/loader.js:638
+    throw err;
+    ^
+
+Error: Cannot find module 'json2csv'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:5:16)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/nhscusbt/Final_NHSCF_Home/routes/web/index.js:12:17)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+internal/modules/cjs/loader.js:638
+    throw err;
+    ^
+
+Error: Cannot find module 'json2csv'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:5:16)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/nhscusbt/Final_NHSCF_Home/routes/web/index.js:12:17)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+(node:3301121) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'prefEmail' of undefined
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:498:26
+    at Layer.handle [as handle_request] (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/layer.js:95:5)
+    at /home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:317:13)
+    at /home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:275:10)
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/index.js:10:5
+(node:3301121) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:3301121) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:3301121) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'prefEmail' of undefined
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:498:26
+    at Layer.handle [as handle_request] (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/layer.js:95:5)
+    at /home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:317:13)
+    at /home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:275:10)
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/index.js:10:5
+(node:3301121) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:3301121) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'prefEmail' of undefined
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:498:26
+    at Layer.handle [as handle_request] (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/layer.js:95:5)
+    at /home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:317:13)
+    at /home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/express/lib/router/index.js:275:10)
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/index.js:10:5
+(node:3301121) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+awk: (FILENAME=- FNR=1) warning: error writing standard output (Broken pipe)
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+(node:2004262) UnhandledPromiseRejectionWarning: ReferenceError: transporter is not defined
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:3
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2004262) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:2004262) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+(node:2015281) UnhandledPromiseRejectionWarning: TypeError: transporter.sendMail is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:15
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2015281) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:2015281) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:2015281) UnhandledPromiseRejectionWarning: TypeError: transporter.sendMail is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:15
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2015281) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:2015281) UnhandledPromiseRejectionWarning: TypeError: transporter.sendMail is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:15
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2015281) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
+(node:2015281) UnhandledPromiseRejectionWarning: TypeError: transporter.sendMail is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:15
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2015281) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:2015281) UnhandledPromiseRejectionWarning: TypeError: transporter.sendMail is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:15
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2015281) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+(node:3210916) DeprecationWarning: Mongoose: `findOneAndUpdate()` and `findOneAndDelete()` without the `useFindAndModify` option set to false are deprecated. See: https://mongoosejs.com/docs/deprecations.html#findandmodify
+Exception ignored in: <_io.TextIOWrapper name='<stdout>' mode='w' encoding='utf-8'>
+BrokenPipeError: [Errno 32] Broken pipe
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+(node:2508174) UnhandledPromiseRejectionWarning: TypeError: transporter.sendMail is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:15
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2508174) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:2508174) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+(node:2520362) UnhandledPromiseRejectionWarning: TypeError: transporter.verify is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:17
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2520362) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:2520362) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:2520362) UnhandledPromiseRejectionWarning: TypeError: transporter.verify is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:17
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2520362) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:2520362) UnhandledPromiseRejectionWarning: TypeError: transporter.verify is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:17
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2520362) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
+(node:2520362) UnhandledPromiseRejectionWarning: TypeError: transporter.verify is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:17
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2520362) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:2520362) UnhandledPromiseRejectionWarning: TypeError: transporter.verify is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:17
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2520362) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+(node:3168964) UnhandledPromiseRejectionWarning: TypeError: transporter.verify is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:17
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:3168964) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:3168964) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:3168964) UnhandledPromiseRejectionWarning: TypeError: transporter.verify is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:17
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:3168964) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:3168964) UnhandledPromiseRejectionWarning: TypeError: transporter.verify is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:17
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:3168964) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+(node:2340610) UnhandledPromiseRejectionWarning: TypeError: transporter.verify is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:17
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2340610) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:2340610) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:2340610) UnhandledPromiseRejectionWarning: TypeError: transporter.verify is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:17
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2340610) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:2340610) UnhandledPromiseRejectionWarning: TypeError: transporter.verify is not a function
+    at /home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1260:17
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:2340610) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
+Exception ignored in: <_io.TextIOWrapper name='<stdout>' mode='w' encoding='utf-8'>
+BrokenPipeError: [Errno 32] Broken pipe
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Exception ignored in: <_io.TextIOWrapper name='<stdout>' mode='w' encoding='utf-8'>
+BrokenPipeError: [Errno 32] Broken pipe
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+/home/nhscusbt/Final_NHSCF_Home/routes/web/home.js:1262
+      throw error;
+      ^
+
+Error: Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a189sm761641qkf.114 - gsmtp
+    at SMTPConnection._formatError (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/nodemailer/lib/smtp-connection/index.js:784:19)
+    at SMTPConnection._actionAUTHComplete (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/nodemailer/lib/smtp-connection/index.js:1536:34)
+    at SMTPConnection._responseActions.push.str (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/nodemailer/lib/smtp-connection/index.js:540:26)
+    at SMTPConnection._processResponse (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/nodemailer/lib/smtp-connection/index.js:947:20)
+    at SMTPConnection._onData (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/nodemailer/lib/smtp-connection/index.js:749:14)
+    at TLSSocket.SMTPConnection._onSocketData.chunk (/home/nhscusbt/nodevenv/Final_NHSCF_Home/10/lib/node_modules/nodemailer/lib/smtp-connection/index.js:189:44)
+    at TLSSocket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    at readableAddChunk (_stream_readable.js:269:11)
+    at TLSSocket.Readable.push (_stream_readable.js:224:10)
+    at TLSWrap.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.

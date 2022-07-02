@@ -1,0 +1,64 @@
+<%- include ("../../_partials/_form_nav.ejs"); %>
+<div class="signup-form">
+    <form action="/signup" method="post">
+		<h2>Sign Up</h2>
+		<p>We are so excited to have you join the committee of the National High School Climate Forum! Please fill out the below form to create an account, using the private key provided in your opening meeting.</p>
+		<hr>
+		<%if(error){%>
+			<p style="color:red">Please Re-submit The Forum</p>
+		<%}%>	
+        <div class="form-group">
+			<div class="row">
+				<div class="col"><input type="text" class="form-control" placeholder="First Name" name="fname" aria-describedby="basic-addon1"></div>
+				<div class="col"><input type="text" class="form-control" placeholder="Last Name" name="lname" aria-describedby="basic-addon1"></div>
+			</div>        	
+        </div>
+        <div class="form-group">
+            <p>Select Your Grade Number:</p>                        
+            <select name="grade">
+                <option name="9" value="9">9</option>
+                <option name="10" value="10">10</option>
+                <option name="11" value="11">11</option>
+                <option name="12" value="12">12</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Preferred Email Address" name="email"
+            aria-describedby="basic-addon1">
+        </div>
+		<div class="form-group">
+            <input type="text" class="form-control" placeholder="Preferred Phone Number" name="prefPhoneNum"
+                            aria-describedby="basic-addon1">
+        </div>
+		<div class="form-group">
+            <p>Select Your Preferred Committee:</p>                        
+            <select name="comm">
+				<option name="recruitment" value="rec">Recruitment</option>
+				<option name="writing" value="write">Writing</option>
+				<option name="planning" value="plan">Planning</option>
+				<option name="none" value="none">No Committee</option>
+            </select>
+        </div>
+		<div class="form-group">
+            <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+        </div>        
+        <div class="form-group">
+            <p>Select Your Registered School:</p>
+            <select searchable="Search here.." id="example-select" name="school">
+                <option value="" disabled selected>Choose your School</option>
+                <% schools.forEach(function(school){%>
+                    <option value="<%=school.schoolName%>"><%=school.schoolName%></option>
+                <%})%>
+                
+            </select>
+		</div>
+		<div class="form-group">
+            <input type="password" name="key" class="form-control" placeholder="Private Key" aria-describedby="basic-addon1">
+        </div>  
+		<div class="form-group">
+		<button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+		</div>
+    </form>
+</div>
+</body>
+</html>

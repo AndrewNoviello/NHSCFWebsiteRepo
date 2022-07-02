@@ -1,0 +1,21 @@
+<div class="navbar" role="navigation">
+    <div class="container">
+       <div class="navbar-header">
+       <p class="navText" href="/">The National High School Climate Forum</p>
+       </div>
+       <ul class="nav navbar-nav navbar-right">
+       <li class="navText"><a class="navText" href="/home">Home</a></li>
+       <li class="navText"><a class="navText" href="/events">Events</a></li>
+       <li class="navText"><a class="navText" href="/newsletters">Newsletters</a></li>
+       <% if(currentUser != null){%>
+           <li><a class="navText" href="/dashboard">Dashboard</a></li>
+           <li><a class="navText" href="/logout">Logout</a></li>
+       <%}%>
+
+       <% if(currentUser == null){%>
+           <li><a class="navText" href="/login">Log In</a></li>
+           <li><a class="navText" href="/signup">Sign Up</a></li>
+           <li><a class="navText" href="/join">Join</a></li>
+       <%}%>
+       </ul>
+   </div>

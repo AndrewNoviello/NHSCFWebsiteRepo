@@ -1,0 +1,50 @@
+<%- include ("../../_partials/_header.ejs"); %>
+
+<div class="topPic2">
+    <%- include ("../../_partials/_top_nav.ejs"); %>
+</div>
+<div class="welcomeText">National High School Climate Forum Events</div>
+
+</div>
+ 
+<div class="container">
+<div>
+    <p style="font-size: 16px; text-align: left; font: italic; color: black; padding-bottom: 25px; padding-top: 15px"><i><b>
+    Scan the events below to see what the National High School Climate Forum is up to! We hope to 
+    see you at our next event!</b></i></p>
+</div>
+	<div>
+		<% items.forEach(function(event) { %>
+		<div>
+			<div class="eventRow">
+				<img class="eventPic"
+                    src="data:event/<%=event.img.contentType%>;base64,
+					<%=event.img.data.toString('base64')%>">
+				<div>
+                    <div class="eventInfo">
+					    <p class="eventName"><b><%= event.eventName %></b></p>
+                        <p class="eventDescription"><%- event.eventDesc %></p>
+                        <p class="eventDate"><b>Event Date: <%= event.eventDate %></b></p>
+                    </div>
+                    <div>
+                        <% if(currentUser && (currentUser.prefEmail == "abnoviello23@lawrenceville.org" || currentUser.prefEmail == "acnoviello23@lawrenceville.org")){%>
+                            <form method="GET" action="/adminEvents">
+                                <input type="hidden" id="adminSelectedEventName" name="adminSelectedEventName" value="<%= event.eventName%>">
+                                <input class="eventRegisterButton" type="submit" value="Manage">
+                            </form>
+                        <%}else{ if(event.canRegister){ %>
+                            <form method="GET" action="/eventRegister">
+                                <input type="hidden" id="chosenEventName" name="chosenEventName" value="<%= event.eventName%>">
+                                <input class="eventRegisterButton" type="submit" value="Register">
+                            </form>
+                        <%}}%>
+                    </div>    
+				</div>
+			</div>
+            
+		</div>
+		<% }) %>
+	</div>
+
+
+<%- include ("../../_partials/_footer.ejs"); %>
