@@ -1,0 +1,328 @@
+<!--
+
+Dear Maintainer,
+This is old code from the first National High School Climate Forum web application used
+in the 2021-2022 school year. This is not used anywhere in the current app (after
+the 2022 refactor); all endpoints associated with these forms are also deprecated. 
+Please do not bother maintaining this code base- you may even delete it if you would like. Thanks!
+
+Andrew Noviello
+NHSCF Co-Founder
+
+-->
+
+
+
+<!--Old Competition Stuff-->
+<div style="background-color: whitesmoke; min-height:100px; border-radius:25px; border-color: darkgreen; padding:10px; margin:10px">
+    <h1 style="color:darkgreen; font-size:36px; font-family: Trebuchet Ms">The National High School Climate Forum Sustainability Competition</h1>
+    <p style="font-family: Trebuchet Ms">This year, the National High School Climate Forum will be hosting a yearlong sustainability competition in order to find out which of our member schools is the most sustainable! Prizes will be awarded to our winning school at the 2022 National High School Climate Forum Youth Climate Summit!</p>
+    <p style="font-family: Trebuchet Ms"><b>Download the 2022 NHSCF Sustainability Competition Workbook here:</b></p>
+    <a href="/public/NHSCF_Sustainability_Competition_Info.pdf" target="_blank">
+    <button style="background-color: darkgreen; color: white; border-radius: 5px; min-height:30px; min-width: 50px; border-color: black; font-style: bold; font-family: Trebuchet Ms; padding: 10px; font-size: 18px" href="/public/NHSCF_Sustainability_Competition_Info.pdf" target="_blank">Download Competition Booklet PDF</button>
+    </a>
+</div>
+
+<!--For uchanging one's committee...NHSCF will no longer be organized in this way!-->
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+    <form method="POST" action="/changeComm">
+        <div class="form-group">
+            <h4>Committee Info</h4><label>Your Current Committee Assignment:</label>
+            <%if(currentUser.committee == "rec"){%><label>Recruitment</label><%}%>
+            <%if(currentUser.committee == "write"){%><label>Writing</label><%}%>
+            <%if(currentUser.committee == "plan"){%><label>Planning</label><%}%>
+            <%if(currentUser.committee == "none"){%><label>No Assigment</label><%}%>
+        </div>
+        <div class="form-group">
+
+            <label>Pick New Committee Assignment:</label>
+            <select class="mdb-select md-form" searchable="Search here.." id="example-select" name="newComm">
+                <option name="recruitment" value="rec">Recruitment</option>
+                <option name="writing" value="write">Writing</option>
+                <option name="planning" value="plan">Planning</option>
+                <option name="none" value="none">No Committee</option>
+            </select>
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Change Committee" /></div>
+    </form>
+</div>
+
+<!--For users' making posts...no longer supported!-->
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4" style="margin-top: 15px;">
+    <form method="POST" action="/addPost">
+        <div class="form-group">
+            <h4>Add Post</h4><label>Post Title</label><input style="color:black; background-color: white;" type="text" class="form-control" placeholder="Post Title" name="title" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group">
+
+            <label>Post Content</label> <textarea class="form-control" style="color:black; background-color: white;" name="content" aria-describedby="basic-addon1"></textarea>
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Make Announcement" /></div>
+    </form>
+</div>
+
+<!--Comment stuff- pointless feature that was never used- deprecated and removed from project-->
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4" style="margin-top: 15px;">
+    <form method="POST" action="/addComment">
+        <div class="form-group">
+            <h4>Comment</h4><label>Comment Title</label> <input class="form-control" style="color:black; background-color: white;" name="commTitle" aria-describedby="basic-addon1"/>
+        </div>
+        <div class="form-group">
+            <label>Message:</label> <textarea class="form-control" style="color:black; background-color: white;" name="commCon" aria-describedby="basic-addon1"></textarea>
+        </div>
+        <div class="form-group"> 
+            <label>Announcement Name To Comment On:</label>
+            <select class="mdb-select md-form" searchable="Search here.." id="example-select" name="compost">
+                <option value="" disabled selected>Post To Comment On</option>
+                <% activePosts.forEach(function(post){%>
+                    <option value="<%=post.title%>"><%=post.title%></option>
+                <%})%>
+            </select>
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Add Comment" /></div>
+    </form>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4" style="margin-top: 15px;">
+    <form method="POST" action="/deleteComment">
+        <div class="form-group">
+            <h4>Delete Your Comments</h4><label>Pick Comment to Delete</label><br><select class="mdb-select md-form" searchable="Search here.." id="example-select" name="delcomms">
+                <option value="" disabled selected>Choose Comment to Delete</option>
+                <% comments.forEach(function(comment){%>
+                    <% if(comment.user == (currentUser.fname + " " + currentUser.lname)){%>
+                    <option value="<%=comment.title%>"><%=comment.title%></option>
+                    <%}%>
+                <%})%>
+            </select>
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Delete Comment" /></div>
+    </form>
+</div>
+
+<!--Signup for writing tasks...no longer supported, deprecated-->
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+    <form method="POST" action="/taskSignup">
+        <div class="form-group"> 
+            <h4>Task Sign Up</h4><label>Sign Up For a Task:</label>
+            <select class="mdb-select md-form" searchable="Search here.." id="example-select" name="task">
+                <option value="" disabled selected>Writing Tasks</option>
+                <% writeTasks.forEach(function(writeTask) {%>
+                    <%if(!writeTask.forEveryone){%>
+                    <option value="<%=writeTask.title%>"><%=writeTask.title%></option>
+                    <%}%>
+                <%})%>
+            </select>
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Sign Up" /></div>
+    </form>
+</div>
+
+<!--List of Writing tasks-->
+<div class="col-sm-5 col-md-6 col-12 pb-4" style="min-height: 2800px">
+    <h1 style="color: black">Writing Committee Tasks</h1>
+    <% writeTasks.forEach(function(writeTask) {%>
+        <div class="comment float-left" style="width: 100%; border-color: darkgreen; border-width: 2px"> 
+            <h4><%= writeTask.title %></h4> 
+            <h5>Task Due Date: <%= writeTask.dueDate%></h5>
+            <br/>
+            <p><%- writeTask.description%></p>
+            <br/>
+            <h5><b>Signed Up:</b></h5><%for(var i = 0; i < writeTask.signedUp.length; i++) {%>
+                <p><%=writeTask.signedUp[i]%></p>
+                <%}%>
+                <%if(writeTask.forEveryone){%>
+                    <p>Everyone</p>
+                <%}%>
+        </div>									
+    <%})%>
+</div>
+
+<!--Recruiting tasks stuff-->
+<div class="col-sm-5 col-md-6 col-12 pb-4" style="min-height: 600px">
+    <h1 style="color: black">Recruiting Committee Tasks</h1>
+    <% recruitTasks.forEach(function(recTask) {%>
+        <div class="comment float-left" style="width: 100%; border-color: darkgreen; border-width: 2px;"> 
+            <h4><%= recTask.title %></h4> 
+            <h5>Task Due Date: <%= recTask.dueDate%></h5>
+            <br/>
+            <p><%- recTask.description%></p>
+            <br/>
+            <h5><b>Signed Up:</b></h5><%for(var i = 0; i < recTask.signedUp.length; i++) {%>
+                <p><%=recTask.signedUp[i]%></p>
+                <%}%>
+                <%if(recTask.forEveryone){%>
+                    <p>Everyone</p>
+                <%}%>
+        </div>									
+    <%})%>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+    <form method="POST" action="/taskSignup">
+        <div class="form-group"> 
+            <h4>Task Sign Up</h4><label>Sign Up For a Task:</label>
+            <select class="mdb-select md-form" searchable="Search here.." id="example-select" name="task">
+                <option value="" disabled selected>Recruiting Tasks</option>
+                <% recruitTasks.forEach(function(recTask) {%>
+                    <%if(!recTask.forEveryone){%>
+                    <option value="<%=recTask.title%>"><%=recTask.title%></option>
+                    <%}%>
+                <%})%>
+            </select>
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Sign Up" /></div>
+        <a href="https://docs.google.com/document/d/1EYjsOF0G6OAxoMke9CvzL3YapFtdsgO7pmYZlIFXjhM/edit?usp=sharing" target="_blank" rel="noopener noreferrer">View The Recruitment Guide</a>
+        <p>  </p>
+        <p>  </p>
+        <p>   </p>
+        <p>Please follow the link below to add contact information for our current recruiting session. Please be sure to select the correct sheet in the bottom menu:</p>
+        <a href="https://docs.google.com/spreadsheets/d/1NgEk0OesSoxtVwJBd1PR5p6RHkAptsL8ptmEtae7bYQ/edit?usp=sharing" target="_blank">Add to our Recruiting List</a>
+        <p></p>
+    </form>
+</div>
+
+<!--Planning tasks stuff-->
+<div class="col-sm-5 col-md-6 col-12 pb-4" style="min-height: 600px">
+    <h1 style="color: black">Planning Committee Tasks</h1>
+    <% planTasks.forEach(function(planTask) {%>
+        <div class="comment float-left" style="width: 100%; border-color: darkgreen; border-width: 2px"> 
+            <h4><%= planTask.title %></h4> 
+            <h5><b>Task Due Date: </b><%= planTask.dueDate%></h5>
+            <br/>
+            <p><%- planTask.description%></p>
+            <br/>
+            <h5><b>Signed Up:</b></h5><%for(var i = 0; i < planTask.signedUp.length; i++) {%>
+                <p><%=planTask.signedUp[i]%></p>
+                <%}%>
+                <%if(planTask.forEveryone){%>
+                    <p>Everyone</p>
+                <%}%>
+        </div>									
+    <%})%>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+    <form method="POST" action="/taskSignup">
+        <div class="form-group"> 
+            <h4>Task Sign Up</h4><label>Sign Up For a Task:</label>
+            <select class="mdb-select md-form" searchable="Search here.." id="example-select" name="task">
+                <option value="" disabled selected>Planning Tasks</option>
+                <% planTasks.forEach(function(planTask) {%>
+                    <%if(!planTask.forEveryone){%>
+                    <option value="<%=planTask.title%>"><%=planTask.title%></option>
+                    <%}%>
+                <%})%>
+            </select>
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Sign Up" /></div>
+    </form>
+</div>
+
+<!--Admin Panel Comments Deleted-->
+<div style="margin-top:15px">
+    <form method="POST" action="/deleteComment">
+        <div class="form-group">
+            <h4>Delete Comment</h4><label>Pick Comment to Delete</label><br><select class="mdb-select md-form" searchable="Search here.." id="example-select" name="delcomms">
+                <option value="" disabled selected>Choose Comment to Delete</option>
+                <% comments.forEach(function(comment){%>
+                    <option value="<%=comment.title%>"><%=comment.title%></option>
+                <%})%>
+            </select>
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Delete Comment" /></div>
+    </form>
+</div>
+
+<!--Admin Panel Tasks Deleted-->
+<div class="col">
+    <br>
+        <h2>Task Control Panel</h2>
+    <br>
+    <div>
+        <form method="POST" action="/createTask">
+            <div class="form-group">
+                <h4>Create Task</h4><label>Task Title</label><input style="color:black; background-color: white;" type="text" class="form-control" placeholder="Task Title" name="title" aria-describedby="basic-addon1">
+            </div>
+            <div class="form-group">
+                <label>Task Description</label><textarea style="color:black; background-color: white;" type="text" class="form-control" placeholder="Task Description" name="description" aria-describedby="basic-addon1"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Committee Assignment</label><br><select name="commAssign" placeholder="Committee Assignment">
+                    <option name="recruitment" value="rec">Recruitment</option>
+                    <option name="writing" value="write">Writing</option>
+                    <option name="planning" value="plan">Planning</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Assign Everyone In Committee?</label><br><select name="everyone" placeholder="Assign Everyone?">
+                    <option name="false" value="false">No</option>
+                    <option name="true" value="true">Yes</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Task Due Date</label><input style="color:black; background-color: white;" type="text" class="form-control" placeholder="Task Due Date" name="dueDate" aria-describedby="basic-addon1">
+            </div>
+            <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Create Task" /></div>
+        </form>
+    </div>
+    <div style="margin-top:15px">
+        <form method="POST" action="/deleteTask">
+            <div class="form-group">
+                <h4>Delete Task</h4><label>Pick Task to Delete</label><br><select class="mdb-select md-form" searchable="Search here.." id="example-select" name="deltasks">
+                    <option value="" disabled selected>Choose Task to Set Inactive</option>
+                    <% activeTasks.forEach(function(task){%>
+                        <option value="<%=task.title%>"><%=task.title%></option>
+                    <%})%>
+                </select>
+            </div>
+            <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Delete Task" /></div>
+        </form>
+    </div>
+    <div style="margin-top:15px">
+        <form method="POST" action="/taskReminder">
+            <div class="form-group">
+                <h4>Send Task Reminder</h4><label>Pick Task to Send Reminder For</label><br><select class="mdb-select md-form" searchable="Search here.." id="example-select" name="remtasks">
+                    <option value="" disabled selected>Choose Task to Send Reminder For</option>
+                    <% activeTasks.forEach(function(task){%>
+                        <option value="<%=task.title%>"><%=task.title%></option>
+                    <%})%>
+                </select>
+            </div>
+            <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Send Reminder" /></div>
+        </form>
+    </div>
+</div>
+
+<!--Admin Panel Event (flyers, speakers, etc.) Stuff Deleted-->
+<div style="margin-top:15px">
+    <form method="POST" action="/addSpeaker" enctype="multipart/form-data">
+        <div class="form-group">
+            <h4>Add Speaker</h4><label>Pick Event to Add Speaker To</label><br><select class="mdb-select md-form" searchable="Search here.." id="example-select" name="addspeakev">
+                <option value="" disabled selected>Event Name</option>
+                <% activeEvents.forEach(function(event){%>
+                    <option value="<%=event.eventName%>"><%=event.eventName%></option>
+                <%})%>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Speaker Name</label><br>
+            <input class="form-control" style="color:black; background-color: white;" type="text" name="speakerName" placeholder="Speaker Name" required>
+        </div>
+        <div class="form-group">
+            <label>Speaker Position</label><br>
+            <input class="form-control" style="color:black; background-color: white;" type="text" name="speakerPos" placeholder="Speaker Position" required>
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Add Speaker"/></div>
+    </form>
+</div>
+<div style="margin-top:15px">
+    <form method="GET" action="/buildFlyer">
+        <div class="form-group">
+            <h4>Create Event Flyer</h4><label>Pick Event to Create Flyer For</label><br><select class="mdb-select md-form" searchable="Search here.." id="example-select" name="flyEvent">
+                <option value="" disabled selected>Event</option>
+                <% activeEvents.forEach(function(event){%>
+                    <option value="<%=event.eventName%>"><%=event.eventName%></option>
+                <%})%>
+            </select>
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Create Flyer" /></div>
+    </form>
+</div>

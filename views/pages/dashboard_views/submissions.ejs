@@ -1,0 +1,178 @@
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4" style="margin-top: 15px;">
+    <form method="POST" action="/submitActivityWriting" enctype="multipart/form-data">
+        <div class="form-group"> 
+            <h4>Activity Writings</h4><label>Author Full Name</label>
+                <input style="background-color: white" type="text" class="form-control" placeholder="Author Full Name" name="authorName" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Author School</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Author School Name" name="authorSchool" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Author Graduation Year</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter your gradutation year" name="authorGradYear" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Date of Article Submission</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter this article's submission date" name="dateSubmitted" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group">
+            <label>Article Full Text (300-400 words; we recommend typing your entry in an external document before copy and pasting it here)</label> <textarea class="form-control" style="color:black; background-color: white;" name="fullText" aria-describedby="basic-addon1"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Upload Image</label>
+            <input class="form-control" style="color:black; background-color: white;" type="file" id="activityWritingImage"
+                name="activityWritingImage" value="" required>
+        </div>								
+        
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Submit Activity Writing" /></div>
+    </form>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4" style="margin-top: 15px;">
+    <form method="POST" action="/submitSusTip" enctype="multipart/form-data">
+        <div class="form-group"> 
+            <h4>Sustainability Tips</h4><label>Sustainability Tip Title</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter your tip's title" name="susTipTitle" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Sustainability Tip Source URL</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter the link to your source" name="susTipLink" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group">
+            <label>Full Sustainability Tip Text (50-75 words; we recommend typing your entry in an external document before copy and pasting it here)</label> <textarea class="form-control" style="color:black; background-color: white;" name="susTipFullText" aria-describedby="basic-addon1"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Upload Image</label>
+            <input class="form-control" style="color:black; background-color: white;" type="file" id="susTipImage"
+            name="susTipImage" value="" required>
+        </div>								
+        
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Submit Tip" /></div>
+    </form>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4" style="margin-top: 15px;">
+    <form method="POST" action="/submitOutsideProgram" enctype="multipart/form-data">
+        <div class="form-group"> 
+            <h4>Outside Programs</h4><label>Program Name</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter the name of the program" name="programName" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Program Host Organization</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter the program's host organization" name="programHost" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Program Location</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter the location of the program" name="programLocation" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Program Dates or Timeframe</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter the timeframe of the program" name="programDates" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Program URL</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter the link to the program's website" name="programLink" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group">
+            <label>Outside Program Description (50-75 words; we recommend typing your entry in an external document before copy and pasting it here)</label> <textarea class="form-control" style="color:black; background-color: white;" name="programDesc" aria-describedby="basic-addon1"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Upload Image</label>
+            <input class="form-control" style="color:black; background-color: white;" type="file" id="programImage"
+            name="programImage" value="" required>
+        </div>								
+        
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Submit Outside Program" /></div>
+
+    </form>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4" style="margin-top: 15px;">
+    <form method="POST" action="/submitOtherArticle">
+        <div class="form-group"> 
+            <h4>Additional Articles</h4><label>Author Full Name</label>
+                <input style="background-color: white" type="text" class="form-control" placeholder="Author Full Name" name="authorName" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Author School</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Author School Name" name="authorSchool" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Author Graduation Year</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter your gradutation year" name="authorGradYear" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Date of Article Submission</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter this article's submission date" name="dateSubmitted" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Article Title</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter your article's title"
+            name="articleTitle" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group">
+            <label>Article Full Text (300-400 words; we recommend typing your entry in an external document before copy and pasting it here)</label> <textarea class="form-control" style="color:black; background-color: white;" name="articleFullText" aria-describedby="basic-addon1"></textarea>
+        </div>
+                                    
+        
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Submit Other Article" /></div>
+    </form>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4" style="margin-top: 15px;">
+    <form method="POST" action="/submitInterestingLink">
+        <div class="form-group"> 
+            <h4>Interesting Links</h4><label>Interesting Link Title</label>
+                <input style="background-color: white" type="text" class="form-control" placeholder="Please enter your link's title"
+                name="linkTitle" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Link URL</label>
+                <input style="background-color: white" type="text" class="form-control" placeholder="Please enter your link URL"
+                name="linkURL" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Submit Interesting Link" /></div>
+    </form>
+</div>
+
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4" style="margin-top: 15px;">
+    <form method="POST" action="/submitSchoolEvent">
+        <div class="form-group"> 
+            <h4>School Events Submission</h4><label>Event Host School Name</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="School Name"
+            name="schoolName" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Date of School Event</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter the date of the event"
+            name="schoolEventDate" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>School Event Time Zone</label>
+            <select class="mdb-select md-form" searchable="Search here.." id="example-select" name="schoolEventTimeZone">
+                <option name="ET" value="ET">ET</option>
+                <option name="PT" value="PT">PT</option>
+                <option name="CT" value="CT">CT</option>
+                <option name="MT" value="MT">MT</option>
+            </select>
+        </div>
+        <div class="form-group"> 
+            <label>School Event AM/PM</label>
+            <select class="mdb-select md-form" searchable="Search here.." id="example-select" name="schoolEventAmPm">
+                <option name="AM" value="AM">AM</option>
+            <option name="PM" value="PM">PM</option>
+            </select>
+        </div>
+        <div class="form-group"> 
+            <label>Time of School Event</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter the time zone for the event"
+            name="schoolEventTime" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"> 
+            <label>Name of School Event</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Please enter the name of the event"
+            name="schoolEventName" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group">
+            <label>School Event Description</label> <textarea class="form-control" style="color:black; background-color: white;" name="schoolEventDesc" aria-describedby="basic-addon1"></textarea>
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Submit School Event" /></div>
+    </form>
+</div>

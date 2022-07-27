@@ -1,0 +1,212 @@
+<div class="col">
+    <br>
+    <h2>Chat Control Panel</h2>
+    <br>
+<div>
+    <form method="POST" action="/addPost" enctype="multipart/form-data">
+        <div class="form-group">
+            <h4>Add Post</h4><label>Post Title</label><input style="color:black; background-color: white;" type="text" class="form-control" placeholder="Post Title" name="title" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group">
+
+            <label>Post Content</label> <textarea class="form-control" style="color:black; background-color: white;" name="content" aria-describedby="basic-addon1"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Upload File Attachment</label>
+            <input type="file" id="file"
+                name="fileAttachment" value="" style="background-color: white">
+        </div>
+
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Make Announcement" /></div>
+    </form>
+</div>
+<div style="margin-top:15px">
+    <form method="POST" action="/deletePost">
+        <div class="form-group">
+            <h4>Delete Post</h4><label>Pick Post to Delete</label><br><select class="mdb-select md-form" searchable="Search here.." id="example-select" name="delposts">
+                <option value="" disabled selected>Choose Post to Delete</option>
+                <% activePosts.forEach(function(post){%>
+                    <option value="<%=post.title%>"><%=post.title%></option>
+                <%})%>
+            </select>
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Delete Post" /></div>
+    </form>
+</div>
+</div>
+
+<div class="col">
+    <br>
+    <h2>Event Control Panel</h2>
+    <br>
+    <div>
+        <form method="POST" action="/eventCreate" enctype="multipart/form-data">
+            <div class="form-group">
+                <h4>Create Event</h4>
+                <label for="name">Event Name</label><br>
+                <input class="form-control" style="color:black; background-color: white;" type="text" id="eventName" placeholder="Event Name"
+                    value="" name="eventName" required>
+            </div>
+            <div class="form-group">
+                <label for="desc">Event Description</label><br>
+                <textarea class="form-control" style="color:black; background-color: white;" id="eventDesc" name="eventDesc" value="" rows="2"
+                        placeholder="Event Description" required>
+                </textarea>
+            </div>
+            <div class="form-group">
+                <label for="date">Event Date/Time</label><br>
+                <input class="form-control" style="color:black; background-color: white;" id="eventDate" name="eventDate"
+                        placeholder="Event Date/Time" required>
+            </div>
+            <div class="form-group">
+                <label for="numfields">Number of Event Fields</label><br>
+            <input class="form-control" style="color:black; background-color: white;" type="number" id="numEventFields" name="numEventFields" value="" rows="2"
+                    placeholder="Number of Event Fields" required>
+            </div>
+            <div class="form-group">
+                <label for="fields">Event Fields</label><br>
+                <textarea class="form-control" style="color:black; background-color: white;" id="eventFields" name="eventFields" value="" rows="2"
+                        placeholder="Event Fields" required>
+                </textarea>							
+            </div>
+            <div class="form-group">
+                <label>Is the event public?</label><br><select name="isPublic" placeholder="Yes or No">
+                    <option name="false" value="false">No</option>
+                    <option name="true" value="true">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="image">Upload Image</label>
+                <input class="form-control" style="color:black; background-color: white;" type="file" id="image"
+                    name="image" value="" required>
+            </div>
+            <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Create Event" /></div>
+        </form>
+    </div>
+    <div style="margin-top:15px">
+        <form method="POST" action="/stopEventRegister">
+            <div class="form-group">
+                <h4>Stop Event Registration</h4><label>Pick Event to Make Not Open For Registration</label><br><select class="mdb-select md-form" searchable="Search here.." id="example-select" name="stopev">
+                    <option value="" disabled selected>Event</option>
+                    <% activeEvents.forEach(function(event){%>
+                        <option value="<%=event.eventName%>"><%=event.eventName%></option>
+                    <%})%>
+                </select>
+            </div>
+            <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Stop Registration" /></div>
+        </form>
+    </div>
+    <div style="margin-top:15px">
+        <form method="POST" action="/delEvent">
+            <div class="form-group">
+                <h4>Delete Event</h4><label>Pick Event to Delete</label><br><select class="mdb-select md-form" searchable="Search here.." id="example-select" name="delev">
+                    <option value="" disabled selected>Event</option>
+                    <% activeEvents.forEach(function(event){%>
+                        <option value="<%=event.eventName%>"><%=event.eventName%></option>
+                    <%})%>
+                </select>
+            </div>
+            <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Delete Event" /></div>
+        </form>
+    </div>
+</div>
+
+<div class="col">
+    <br>
+    <h2>Miscellaneous Control Panel</h2>
+    <br>
+    <div class="form-group"><a href="/createNewsletter1" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white">Create Newsletter</a></div>
+    <form method="GET" action="/downloadSignedUpEmails">
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Download Roster" /></div>
+    </form>
+    <div style="background-color: whitesmoke; margin: 16px; padding: 16px">
+    <form action="/uploadNewsletter" method="POST" enctype="multipart/form-data">
+        <h4>Upload a Newsletter</h4>
+        <div>
+            <label for="month">Month of the Newsletter</label>
+            <input type="text" id="newsletterMonth" placeholder="Month"
+                value="" name="newsletterMonth" required>
+        </div>
+        <div>
+            <label for="year">Year of the Newsletter</label>
+            <input type="text" id="newsletterYear" placeholder="Year"
+                value="" name="newsletterYear" required>
+        </div>
+        <div>
+            <label for="releaseDate">Release Date of the Newsletter</label>
+            <input type="text" id="releaseDate" placeholder="Release Date"
+                value="" name="releaseDate" required>
+        </div>
+
+        <div>
+            <label for="files">Upload Newsletter PDF</label>
+            <input type="file" id="newsletter"
+                name="newsletter" value="" required multiple>
+        </div>
+
+        <div>
+            <label for="files">Upload Newsletter Cover Image</label>
+            <input type="file" id="image"
+                name="image" value="" required multiple>
+        </div>
+
+        <div>
+            <button type="submit">Upload Newsletter</button>
+        </div>
+    </form>
+    </div>
+    
+    
+    <div style="margin-top:15px">
+        <form method="POST" action="/sendIndEmails">
+            <div class="form-group">
+                <h4>Send Individualized Emails</h4><label>Subject</label><br>
+                <input class="form-control" style="color:black; background-color: white;" type="text" name="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group">
+                <label>Message</label><br><p>Please insert "cmmname" where you would like each member's name to go.</p> <textarea class="form-control" style="color:black; background-color: white;" name="message" aria-describedby="basic-addon1"></textarea>
+            </div>
+            <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Send Emails"/></div>
+        </form>
+    </div>
+</div>
+
+
+<div class="col">
+    <br>
+    <h2>Recruitment Control Panel</h2>
+    <br>
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4" style="margin-top: 15px;">
+    <form method="POST" action="/emailForm">
+        <div class="form-group"> 
+            <h4>Recruitment Email Form Tool</h4><p>This tool will automatically send the recruitment template email from you (signed in as a committee member) to the individual specified in your input.</p><label>Recipient Email Address</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Email Address" name="emailAddr" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group">
+            <label>Recipient Full Name (with Ms./Mr.)</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Recipient Full Name (with Ms./Mr.)" name="recipient" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group">
+            <label>Recipient School Name</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Recipient School Name" name="schoolName" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group">
+            <label>Recipient Position</label>
+            <input style="background-color: white" type="text" class="form-control" placeholder="Recipient Position" name="position" aria-describedby="basic-addon1">
+        </div>
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Send" /></div>							
+    </form>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4" style="margin-top: 15px;">
+    <form action="/csvUpload" method="POST" enctype="multipart/form-data">								
+        <div class="form-group"> 
+            <h4>Recruitment Email Form Tool</h4><p>Use this tool for automated recruiting of large numbers of schools. The CSV columns must be ordered as follows (all info pertains to email recipient): Email Address, Full Name, School Name, Position</p><label>Upload CSV File</label>
+            <input class="form-control" style="background-color: white" type="file" id="csvFile"
+                name="csvFile" value="" required multiple>
+        </div>
+
+        <div class="form-group"><input type="submit" class="btn btn-default navbar-btn" style="background-color: darkgreen; color:white" value="Upload and Send Emails" /></div>							
+    </form>
+</div>
+</div>
